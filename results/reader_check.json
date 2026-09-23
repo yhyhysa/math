@@ -1,0 +1,353 @@
+{
+  "timestamp": "2026-09-23 17:13:35",
+  "all_passed": true,
+  "attachment2": {
+    "file": "aligned_50.pkl",
+    "packaging": "split-columnar",
+    "splits": {
+      "train": {
+        "expected_count": 3395,
+        "actual_count": 3395,
+        "unique_ids": 3395,
+        "shape_errors": [],
+        "passed": true
+      },
+      "valid": {
+        "expected_count": 728,
+        "actual_count": 728,
+        "unique_ids": 728,
+        "shape_errors": [],
+        "passed": true
+      },
+      "test": {
+        "expected_count": 727,
+        "actual_count": 727,
+        "unique_ids": 727,
+        "shape_errors": [],
+        "passed": true
+      }
+    },
+    "errors": [],
+    "passed": true
+  },
+  "attachment3": {
+    "directory": "对齐版本",
+    "total_files": 30,
+    "samples_checked": 30,
+    "unique_sample_ids": 30,
+    "file_results": [
+      {
+        "file": "附件3_01.pkl",
+        "sample_id": "附件3_01",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_02.pkl",
+        "sample_id": "附件3_02",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_03.pkl",
+        "sample_id": "附件3_03",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_04.pkl",
+        "sample_id": "附件3_04",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_05.pkl",
+        "sample_id": "附件3_05",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_06.pkl",
+        "sample_id": "附件3_06",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_07.pkl",
+        "sample_id": "附件3_07",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_08.pkl",
+        "sample_id": "附件3_08",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_09.pkl",
+        "sample_id": "附件3_09",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_10.pkl",
+        "sample_id": "附件3_10",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_11.pkl",
+        "sample_id": "附件3_11",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_12.pkl",
+        "sample_id": "附件3_12",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_13.pkl",
+        "sample_id": "附件3_13",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_14.pkl",
+        "sample_id": "附件3_14",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_15.pkl",
+        "sample_id": "附件3_15",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_16.pkl",
+        "sample_id": "附件3_16",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_17.pkl",
+        "sample_id": "附件3_17",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_18.pkl",
+        "sample_id": "附件3_18",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_19.pkl",
+        "sample_id": "附件3_19",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_20.pkl",
+        "sample_id": "附件3_20",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_21.pkl",
+        "sample_id": "附件3_21",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_22.pkl",
+        "sample_id": "附件3_22",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_23.pkl",
+        "sample_id": "附件3_23",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_24.pkl",
+        "sample_id": "附件3_24",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_25.pkl",
+        "sample_id": "附件3_25",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_26.pkl",
+        "sample_id": "附件3_26",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_27.pkl",
+        "sample_id": "附件3_27",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_28.pkl",
+        "sample_id": "附件3_28",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_29.pkl",
+        "sample_id": "附件3_29",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "附件3_30.pkl",
+        "sample_id": "附件3_30",
+        "passed": true,
+        "errors": []
+      }
+    ],
+    "errors": [],
+    "passed": true
+  },
+  "attachment4": {
+    "directory": "对齐版本",
+    "total_files": 20,
+    "samples_checked": 20,
+    "unique_sample_ids": 20,
+    "file_results": [
+      {
+        "file": "01.pkl",
+        "sample_id": "01",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "02.pkl",
+        "sample_id": "02",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "03.pkl",
+        "sample_id": "03",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "04.pkl",
+        "sample_id": "04",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "05.pkl",
+        "sample_id": "05",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "06.pkl",
+        "sample_id": "06",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "07.pkl",
+        "sample_id": "07",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "08.pkl",
+        "sample_id": "08",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "09.pkl",
+        "sample_id": "09",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "10.pkl",
+        "sample_id": "10",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "11.pkl",
+        "sample_id": "11",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "12.pkl",
+        "sample_id": "12",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "13.pkl",
+        "sample_id": "13",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "14.pkl",
+        "sample_id": "14",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "15.pkl",
+        "sample_id": "15",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "16.pkl",
+        "sample_id": "16",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "17.pkl",
+        "sample_id": "17",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "18.pkl",
+        "sample_id": "18",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "19.pkl",
+        "sample_id": "19",
+        "passed": true,
+        "errors": []
+      },
+      {
+        "file": "20.pkl",
+        "sample_id": "20",
+        "passed": true,
+        "errors": []
+      }
+    ],
+    "errors": [],
+    "passed": true
+  }
+}

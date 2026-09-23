@@ -1,0 +1,205 @@
+{
+  "timestamp": "2026-09-23 17:13:50",
+  "input": {
+    "aligned_50_pkl": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\data\\raw\\extracted\\E题数据\\附件2-数据集特征文件\\aligned_50.pkl",
+    "aligned_50_pkl_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd"
+  },
+  "mask_source": "Attachment 2 text_bert attention_mask (row 1); no mask is invented",
+  "splits": {
+    "train": {
+      "sample_count": 3395,
+      "sequence_length": 50,
+      "text_len_min": 3,
+      "text_len_max": 50,
+      "text_len_mean": 24.645655375552284,
+      "padding_positions_total": 86078,
+      "text_padding_mask": {
+        "definition": "True for active token steps (0 <= t < text_len), False for PAD",
+        "cls_always_valid": true,
+        "pad_entries_nonzero_id_count": 0
+      },
+      "audio": {
+        "shape": [
+          3395,
+          50,
+          74
+        ],
+        "dtype": "float64",
+        "padding_positions_total": 86078,
+        "valid_positions_total": 83672,
+        "zero_vectors_total": 92933,
+        "zero_vectors_in_padding": 86078,
+        "zero_vectors_in_valid_positions": 6855,
+        "zero_vectors_in_valid_excluding_cls_sep": 65,
+        "sequences_with_any_zero_vector_in_valid_positions": 3395,
+        "sequences_with_any_zero_vector_in_valid_excluding_cls_sep": 4,
+        "exact_zero_entry_fraction_overall": 0.5942718624368108,
+        "exact_zero_entry_fraction_in_valid_positions": 0.17687695583526925,
+        "all_zero_interpretation": "疑似无观测 (suspected unobserved); 缺少原始特征提取证据，不宣称为人脸遮挡或真实模态缺失"
+      },
+      "vision": {
+        "shape": [
+          3395,
+          50,
+          35
+        ],
+        "dtype": "float64",
+        "padding_positions_total": 86078,
+        "valid_positions_total": 83672,
+        "zero_vectors_total": 97117,
+        "zero_vectors_in_padding": 86078,
+        "zero_vectors_in_valid_positions": 11039,
+        "zero_vectors_in_valid_excluding_cls_sep": 4249,
+        "sequences_with_any_zero_vector_in_valid_positions": 3395,
+        "sequences_with_any_zero_vector_in_valid_excluding_cls_sep": 421,
+        "exact_zero_entry_fraction_overall": 0.5721304439301493,
+        "exact_zero_entry_fraction_in_valid_positions": 0.13195743925259176,
+        "all_zero_interpretation": "疑似无观测 (suspected unobserved); 缺少原始特征提取证据，不宣称为人脸遮挡或真实模态缺失"
+      }
+    },
+    "valid": {
+      "sample_count": 728,
+      "sequence_length": 50,
+      "text_len_min": 3,
+      "text_len_max": 50,
+      "text_len_mean": 25.587912087912088,
+      "padding_positions_total": 17772,
+      "text_padding_mask": {
+        "definition": "True for active token steps (0 <= t < text_len), False for PAD",
+        "cls_always_valid": true,
+        "pad_entries_nonzero_id_count": 0
+      },
+      "audio": {
+        "shape": [
+          728,
+          50,
+          74
+        ],
+        "dtype": "float64",
+        "padding_positions_total": 17772,
+        "valid_positions_total": 18628,
+        "zero_vectors_total": 19274,
+        "zero_vectors_in_padding": 17772,
+        "zero_vectors_in_valid_positions": 1502,
+        "zero_vectors_in_valid_excluding_cls_sep": 46,
+        "sequences_with_any_zero_vector_in_valid_positions": 728,
+        "sequences_with_any_zero_vector_in_valid_excluding_cls_sep": 1,
+        "exact_zero_entry_fraction_overall": 0.5767252004752005,
+        "exact_zero_entry_fraction_in_valid_positions": 0.17290086414522746,
+        "all_zero_interpretation": "疑似无观测 (suspected unobserved); 缺少原始特征提取证据，不宣称为人脸遮挡或真实模态缺失"
+      },
+      "vision": {
+        "shape": [
+          728,
+          50,
+          35
+        ],
+        "dtype": "float64",
+        "padding_positions_total": 17772,
+        "valid_positions_total": 18628,
+        "zero_vectors_total": 20208,
+        "zero_vectors_in_padding": 17772,
+        "zero_vectors_in_valid_positions": 2436,
+        "zero_vectors_in_valid_excluding_cls_sep": 980,
+        "sequences_with_any_zero_vector_in_valid_positions": 728,
+        "sequences_with_any_zero_vector_in_valid_excluding_cls_sep": 85,
+        "exact_zero_entry_fraction_overall": 0.5552590266875981,
+        "exact_zero_entry_fraction_in_valid_positions": 0.13095493726801435,
+        "all_zero_interpretation": "疑似无观测 (suspected unobserved); 缺少原始特征提取证据，不宣称为人脸遮挡或真实模态缺失"
+      }
+    },
+    "test": {
+      "sample_count": 727,
+      "sequence_length": 50,
+      "text_len_min": 4,
+      "text_len_max": 50,
+      "text_len_mean": 25.184319119669876,
+      "padding_positions_total": 18041,
+      "text_padding_mask": {
+        "definition": "True for active token steps (0 <= t < text_len), False for PAD",
+        "cls_always_valid": true,
+        "pad_entries_nonzero_id_count": 0
+      },
+      "audio": {
+        "shape": [
+          727,
+          50,
+          74
+        ],
+        "dtype": "float64",
+        "padding_positions_total": 18041,
+        "valid_positions_total": 18309,
+        "zero_vectors_total": 19495,
+        "zero_vectors_in_padding": 18041,
+        "zero_vectors_in_valid_positions": 1454,
+        "zero_vectors_in_valid_excluding_cls_sep": 0,
+        "sequences_with_any_zero_vector_in_valid_positions": 727,
+        "sequences_with_any_zero_vector_in_valid_excluding_cls_sep": 0,
+        "exact_zero_entry_fraction_overall": 0.583918361277371,
+        "exact_zero_entry_fraction_in_valid_positions": 0.17392716327666352,
+        "all_zero_interpretation": "疑似无观测 (suspected unobserved); 缺少原始特征提取证据，不宣称为人脸遮挡或真实模态缺失"
+      },
+      "vision": {
+        "shape": [
+          727,
+          50,
+          35
+        ],
+        "dtype": "float64",
+        "padding_positions_total": 18041,
+        "valid_positions_total": 18309,
+        "zero_vectors_total": 20519,
+        "zero_vectors_in_padding": 18041,
+        "zero_vectors_in_valid_positions": 2478,
+        "zero_vectors_in_valid_excluding_cls_sep": 1024,
+        "sequences_with_any_zero_vector_in_valid_positions": 727,
+        "sequences_with_any_zero_vector_in_valid_excluding_cls_sep": 99,
+        "exact_zero_entry_fraction_overall": 0.5644920416584791,
+        "exact_zero_entry_fraction_in_valid_positions": 0.1353588789276156,
+        "all_zero_interpretation": "疑似无观测 (suspected unobserved); 缺少原始特征提取证据，不宣称为人脸遮挡或真实模态缺失"
+      }
+    }
+  },
+  "scope": "Padding/zero-feature counting and dtype measurement only. No claim is made about the cause of zero features.",
+  "label_consistency_within_attachment2": {
+    "train": {
+      "classification_label_matches_regression_sign": 3395,
+      "sample_count": 3395,
+      "regression_min": -3.0,
+      "regression_max": 3.0,
+      "classification_counts": {
+        "0": 967,
+        "1": 758,
+        "2": 1670
+      }
+    },
+    "valid": {
+      "classification_label_matches_regression_sign": 728,
+      "sample_count": 728,
+      "regression_min": -3.0,
+      "regression_max": 3.0,
+      "classification_counts": {
+        "0": 206,
+        "1": 184,
+        "2": 338
+      }
+    },
+    "test": {
+      "classification_label_matches_regression_sign": 727,
+      "sample_count": 727,
+      "regression_min": -3.0,
+      "regression_max": 3.0,
+      "classification_counts": {
+        "0": 207,
+        "1": 158,
+        "2": 362
+      }
+    }
+  },
+  "training_time_simulated_missing_mask": {
+    "status": "T1_PENDING_IMPLEMENTATION",
+    "definition": "训练时模拟缺失：仅在有效词步 (1 <= t <= text_len-2) 上施加连续遮蔽",
+    "executed_in_t0": false,
+    "note": "T0 未实现 Dataset/DataLoader，因此本轮没有任何训练时缺失模拟被执行。"
+  }
+}

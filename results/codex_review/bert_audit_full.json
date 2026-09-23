@@ -1,0 +1,417 @@
+{
+  "timestamp": "2026-09-23 15:41:00",
+  "elapsed_seconds": 22.6,
+  "model_metadata": {
+    "name": "bert-base-uncased",
+    "revision_sha": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "vocab_size": 30522,
+    "hidden_dimension": 768,
+    "file_hashes": {
+      "vocab.txt": {
+        "path": "C:\\Users\\本地账户\\.cache\\huggingface\\hub\\models--bert-base-uncased\\snapshots\\86b5e0934494bd15c9632b12f734a8a67f723594\\vocab.txt",
+        "size_bytes": 231508,
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      "config.json": {
+        "path": "C:\\Users\\本地账户\\.cache\\huggingface\\hub\\models--bert-base-uncased\\snapshots\\86b5e0934494bd15c9632b12f734a8a67f723594\\config.json",
+        "size_bytes": 570,
+        "sha256": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20"
+      },
+      "model.safetensors": {
+        "path": "C:\\Users\\本地账户\\.cache\\huggingface\\hub\\models--bert-base-uncased\\snapshots\\86b5e0934494bd15c9632b12f734a8a67f723594\\model.safetensors",
+        "size_bytes": 440449768,
+        "sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3"
+      },
+      "tokenizer.json": {
+        "path": "C:\\Users\\本地账户\\.cache\\huggingface\\hub\\models--bert-base-uncased\\snapshots\\86b5e0934494bd15c9632b12f734a8a67f723594\\tokenizer.json",
+        "size_bytes": 466062,
+        "sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98"
+      }
+    }
+  },
+  "attachment2_audit": {
+    "train": {
+      "sample_count": 3395,
+      "token_id_exact_matches": 3395,
+      "token_mask_exact_matches": 3395,
+      "token_type_exact_matches": 3395,
+      "token_full_exact_matches": 3395,
+      "token_full_match_ratio": 1.0,
+      "reconstruction_stats": {
+        "max_absolute_error": 0.0005966424942016602,
+        "mean_absolute_error": 1.2147003841011707e-05,
+        "p50_absolute_error": 7.152557373046875e-06,
+        "p90_absolute_error": 1.71661376953125e-05,
+        "p95_absolute_error": 3.542900085449206e-05,
+        "p99_absolute_error": 0.00010460972785949707,
+        "samples_exceeding_1e_3": 0,
+        "samples_exceeding_1e_4": 39,
+        "samples_exceeding_1e_5": 933,
+        "samples_exceeding_1e_6": 3395,
+        "batch_size": 64,
+        "elapsed_seconds": 19.35
+      }
+    },
+    "valid": {
+      "sample_count": 728,
+      "token_id_exact_matches": 728,
+      "token_mask_exact_matches": 728,
+      "token_type_exact_matches": 728,
+      "token_full_exact_matches": 728,
+      "token_full_match_ratio": 1.0,
+      "reconstruction_stats": {
+        "max_absolute_error": 0.0003104209899902344,
+        "mean_absolute_error": 1.2787785185987109e-05,
+        "p50_absolute_error": 7.3909759521484375e-06,
+        "p90_absolute_error": 1.9508600234985356e-05,
+        "p95_absolute_error": 3.747940063476558e-05,
+        "p99_absolute_error": 8.975028991699231e-05,
+        "samples_exceeding_1e_3": 0,
+        "samples_exceeding_1e_4": 7,
+        "samples_exceeding_1e_5": 211,
+        "samples_exceeding_1e_6": 728,
+        "batch_size": 64,
+        "elapsed_seconds": 0.99
+      }
+    },
+    "test": {
+      "sample_count": 727,
+      "token_id_exact_matches": 727,
+      "token_mask_exact_matches": 727,
+      "token_type_exact_matches": 727,
+      "token_full_exact_matches": 727,
+      "token_full_match_ratio": 1.0,
+      "reconstruction_stats": {
+        "max_absolute_error": 0.0003275871276855469,
+        "mean_absolute_error": 1.1296597267135958e-05,
+        "p50_absolute_error": 6.9141387939453125e-06,
+        "p90_absolute_error": 1.71661376953125e-05,
+        "p95_absolute_error": 2.942085266113278e-05,
+        "p99_absolute_error": 7.2627067565918e-05,
+        "samples_exceeding_1e_3": 0,
+        "samples_exceeding_1e_4": 3,
+        "samples_exceeding_1e_5": 185,
+        "samples_exceeding_1e_6": 727,
+        "batch_size": 64,
+        "elapsed_seconds": 0.98
+      }
+    }
+  },
+  "attachment4_audit": {
+    "sample_count": 20,
+    "token_full_exact_matches": 20,
+    "token_full_match_ratio": 1.0,
+    "reconstruction_stats": {
+      "max_absolute_error": 9.560585021972656e-05,
+      "mean_absolute_error": 1.7013027900247835e-05,
+      "p50_absolute_error": 1.1324882507324219e-05,
+      "p90_absolute_error": 2.1648407710017636e-05,
+      "p99_absolute_error": 8.188005449483171e-05,
+      "samples_exceeding_1e_3": 0,
+      "samples_exceeding_1e_4": 0,
+      "samples_exceeding_1e_5": 13,
+      "samples_exceeding_1e_6": 20
+    }
+  },
+  "attachment3_audit": {
+    "file_count": 30,
+    "raw_text_verification_note": "Attachment 3 contains NO raw_text. Tokenizer re-tokenization cannot be performed. Token IDs, special tokens, and frozen encoder forward inference are verified directly.",
+    "cls_special_token_ok_count": 30,
+    "sep_special_token_ok_count": 30,
+    "pad_special_token_ok_count": 30,
+    "min_token_id_overall": 0,
+    "max_token_id_overall": 28428,
+    "frozen_encoder_inference_passed": true,
+    "output_shape": [
+      30,
+      50,
+      768
+    ],
+    "samples": [
+      {
+        "file": "附件3_01.pkl",
+        "text_len": 8,
+        "min_token_id": 0,
+        "max_token_id": 3340,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_02.pkl",
+        "text_len": 30,
+        "min_token_id": 0,
+        "max_token_id": 19422,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_03.pkl",
+        "text_len": 34,
+        "min_token_id": 0,
+        "max_token_id": 26114,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_04.pkl",
+        "text_len": 33,
+        "min_token_id": 0,
+        "max_token_id": 18868,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_05.pkl",
+        "text_len": 14,
+        "min_token_id": 0,
+        "max_token_id": 3427,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_06.pkl",
+        "text_len": 27,
+        "min_token_id": 0,
+        "max_token_id": 27572,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_07.pkl",
+        "text_len": 23,
+        "min_token_id": 0,
+        "max_token_id": 28428,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_08.pkl",
+        "text_len": 17,
+        "min_token_id": 0,
+        "max_token_id": 17704,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_09.pkl",
+        "text_len": 16,
+        "min_token_id": 0,
+        "max_token_id": 9650,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_10.pkl",
+        "text_len": 8,
+        "min_token_id": 0,
+        "max_token_id": 4617,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_11.pkl",
+        "text_len": 16,
+        "min_token_id": 0,
+        "max_token_id": 7840,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_12.pkl",
+        "text_len": 15,
+        "min_token_id": 0,
+        "max_token_id": 7312,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_13.pkl",
+        "text_len": 21,
+        "min_token_id": 0,
+        "max_token_id": 27612,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_14.pkl",
+        "text_len": 25,
+        "min_token_id": 0,
+        "max_token_id": 21892,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_15.pkl",
+        "text_len": 29,
+        "min_token_id": 0,
+        "max_token_id": 7705,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_16.pkl",
+        "text_len": 36,
+        "min_token_id": 0,
+        "max_token_id": 26653,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_17.pkl",
+        "text_len": 24,
+        "min_token_id": 0,
+        "max_token_id": 11360,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_18.pkl",
+        "text_len": 19,
+        "min_token_id": 0,
+        "max_token_id": 14396,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_19.pkl",
+        "text_len": 26,
+        "min_token_id": 0,
+        "max_token_id": 18704,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_20.pkl",
+        "text_len": 50,
+        "min_token_id": 100,
+        "max_token_id": 26114,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_21.pkl",
+        "text_len": 11,
+        "min_token_id": 0,
+        "max_token_id": 4553,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_22.pkl",
+        "text_len": 19,
+        "min_token_id": 0,
+        "max_token_id": 4695,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_23.pkl",
+        "text_len": 15,
+        "min_token_id": 0,
+        "max_token_id": 20338,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_24.pkl",
+        "text_len": 10,
+        "min_token_id": 0,
+        "max_token_id": 2428,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_25.pkl",
+        "text_len": 11,
+        "min_token_id": 0,
+        "max_token_id": 9994,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_26.pkl",
+        "text_len": 24,
+        "min_token_id": 0,
+        "max_token_id": 3632,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_27.pkl",
+        "text_len": 23,
+        "min_token_id": 0,
+        "max_token_id": 18402,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_28.pkl",
+        "text_len": 35,
+        "min_token_id": 0,
+        "max_token_id": 25703,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_29.pkl",
+        "text_len": 20,
+        "min_token_id": 0,
+        "max_token_id": 5544,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      },
+      {
+        "file": "附件3_30.pkl",
+        "text_len": 26,
+        "min_token_id": 0,
+        "max_token_id": 4357,
+        "cls_is_101": true,
+        "sep_is_102": true,
+        "pad_is_0": true
+      }
+    ]
+  },
+  "overall_summary": {
+    "total_evaluated_samples_a2_and_a4": 4870,
+    "max_absolute_error_overall": 0.0005966424942016602,
+    "mean_absolute_error_overall": 1.2135825961832056e-05,
+    "p50_absolute_error_overall": 7.152557373046875e-06,
+    "p90_absolute_error_overall": 1.7642974853515625e-05,
+    "p95_absolute_error_overall": 3.5548210144043055e-05,
+    "p99_absolute_error_overall": 9.79387760162376e-05,
+    "total_samples_exceeding_1e_3": 0,
+    "total_samples_exceeding_1e_4": 49,
+    "total_samples_exceeding_1e_5": 1342,
+    "total_samples_exceeding_1e_6": 4870,
+    "reconstruction_fidelity_status": "VERIFIED_NUMERICAL_FIDELITY: max_err=5.97e-04, mean_err=1.21e-05, p99=9.79e-05. 0 samples exceed 1e-3. 4821/4870 (99.0%) samples have max error <= 1e-4, arising purely from FP32 cuDNN/CUDA matrix multiplication order variations."
+  }
+}

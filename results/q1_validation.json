@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "samples": 100,
+  "statuses": {
+    "PASS": 37,
+    "REVIEW": 63
+  },
+  "total_words": 1932,
+  "unresolved_words": 168,
+  "unresolved_reasons": {
+    "low_ctc_confidence": 156,
+    "unsupported_ctc_text": 12
+  },
+  "audio_valid_tokens": 2111,
+  "vision_valid_tokens": 1562,
+  "errors": []
+}

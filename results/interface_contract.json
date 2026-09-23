@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "E题 多模态统一数据接口与模型契约 (Interface Contract v2)",
+  "version": "2.0.0",
+  "date": "2026-09-23",
+  "frozen_text_encoder": {
+    "name": "bert-base-uncased",
+    "revision_sha": "86b5e0934494bd15c9632b12f734a8a67f723594",
+    "version_binding": "从本地快照目录 snapshots/86b5e0934494bd15c9632b12f734a8a67f723594 加载（local_files_only=True，HF_HUB_OFFLINE=1），不使用可变的 refs/main；加载前后逐文件核对 SHA-256，缺失或哈希不符即非零退出。",
+    "vocab_size": 30522,
+    "hidden_dimension": 768,
+    "max_sequence_length": 50,
+    "truncation_strategy": "longest_first_to_50",
+    "special_tokens": {
+      "cls_id": 101,
+      "sep_id": 102,
+      "pad_id": 0
+    },
+    "output_layer": "last_hidden_state (50, 768)",
+    "file_hashes": {
+      "vocab_txt_sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "config_json_sha256": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20",
+      "model_safetensors_sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+      "tokenizer_json_sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98"
+    },
+    "external_download_policy": "外部冻结权重（~440MB）不进入 50MB 提交包。获取地址：HuggingFace hub 模型 ID bert-base-uncased，revision 86b5e0934494bd15c9632b12f734a8a67f723594；离线复现需预先落地该快照。评审阶段是否允许联网下载仍待官方规则核验，不默认接受。"
+  },
+  "modality_raw_tensor_spec": {
+    "text": {
+      "shape": [
+        50,
+        768
+      ],
+      "raw_dtype": "float32",
+      "dtype_measured_on": "Attachment 2 aligned_50.pkl / Attachment 4 aligned pkl",
+      "units": "BERT last hidden state (frozen encoder)"
+    },
+    "text_bert": {
+      "shape": [
+        3,
+        50
+      ],
+      "raw_dtype": "int64",
+      "rows": [
+        "input_ids",
+        "attention_mask",
+        "token_type_ids"
+      ],
+      "semantics_status": "token ids verified as 3 rows; row order matches bert-base-uncased tokenizer output on 4870 samples"
+    },
+    "audio": {
+      "shape": [
+        50,
+        74
+      ],
+      "raw_dtype": "float64",
+      "dtype_measured_on": "Attachment 2 aligned_50.pkl (np.float64 as stored)",
+      "units": "74-dim acoustic descriptors",
+      "dimension_semantics": "UNKNOWN",
+      "dimension_semantics_note": "题目与附件均未给出 74 维逐维语义；不作命名或类型假设，按统一数值特征输入。"
+    },
+    "vision": {
+      "shape": [
+        50,
+        35
+      ],
+      "raw_dtype": "float64",
+      "dtype_measured_on": "Attachment 2 aligned_50.pkl (np.float64 as stored)",
+      "units": "35-dim facial visual features",
+      "dimension_semantics": "UNKNOWN",
+      "dimension_semantics_note": "题目与附件均未给出 35 维逐维语义；不作命名或类型假设，按统一数值特征输入。"
+    }
+  },
+  "dtype_conversion_policy": {
+    "raw_storage_dtype": {
+      "audio": "float64",
+      "vision": "float64",
+      "text": "float32",
+      "text_bert": "int64"
+    },
+    "training_dtype": "float32",
+    "conversion_point": "T1: 在 Dataset.__getitem__ / DataLoader collate 处用 torch.as_tensor(x, dtype=torch.float32)",
+    "conversion_status": "NOT_YET_IMPLEMENTED",
+    "numerical_checks": {
+      "status": "T1_PENDING_IMPLEMENTATION",
+      "requirement": "T1 Dataset/DataLoader 必须在每个 batch 上执行 torch.isfinite(x).all()，发现 NaN/Inf 立即非零中止",
+      "enforced_in_t0": false,
+      "enforced_in_t0_note": "T0 未实现 Dataset/DataLoader，因此本轮没有任何有限值检查被执行；此为 T1 待实现合同，不得写成已执行。"
+    }
+  },
+  "mask_definitions": {
+    "source": "Attachment 2 text_bert attention_mask (row 1); no mask is invented for missing data",
+    "padding_mask": "bool (50,), True for active steps (0 <= t < text_len), False for PAD (t >= text_len)",
+    "valid_position_zero_feature_status": "疑似无观测 (suspected unobserved) — 缺少原始特征提取证据，不宣称为人脸遮挡或真实模态缺失",
+    "observed_mask": {
+      "text": "bool (50,), True where the token position is valid (0 <= t < text_len)",
+      "audio": "bool (50,), False at CLS (pos 0) / SEP (pos text_len-1) and where ||x|| < 1e-6 in valid steps (标为'疑似无观测')",
+      "vision": "bool (50,), False at CLS (pos 0) / SEP (pos text_len-1) and where ||x|| < 1e-6 in valid steps (标为'疑似无观测')"
+    },
+    "training_missing_mask": {
+      "status": "T1_PENDING_IMPLEMENTATION",
+      "definition": "训练时模拟缺失：仅在有效词步 (1 <= t <= text_len-2) 上施加连续遮蔽；T0 未执行，仅登记合同"
+    },
+    "measured_zero_statistics": "见 results/mask_audit.json（按 padding 位置 / 有效 token 位置分列统计）"
+  },
+  "labels_spec": {
+    "classification": {
+      "raw_dtype": "float64",
+      "target_dtype": "int64",
+      "mapping": {
+        "0": "Negative (intensity in [-3.0, -0.33])",
+        "1": "Neutral (intensity strictly == 0.0)",
+        "2": "Positive (intensity in [0.17, 3.0])"
+      }
+    },
+    "regression": {
+      "raw_dtype": "float64",
+      "target_dtype": "float32",
+      "range": [
+        -3.0,
+        3.0
+      ],
+      "neutral_value": 0.0
+    }
+  },
+  "packaging_dispatch_contract": {
+    "attachment2": "Columnar dict with train/valid/test -> unbind sample row into Sample objects",
+    "attachment3": "Dict with 'test' key and leading batch dim 1 -> squeeze(0), generate text from text_bert, derive local_id from stem (附件3_01~30)",
+    "attachment4": "Flat dict without batch dim -> extract arrays directly, link to videos/{id}.mp4"
+  },
+  "submission_csv_schemas": {
+    "q2_submission": [
+      "sample_id",
+      "source_file",
+      "polarity",
+      "intensity",
+      "negative_prob",
+      "neutral_prob",
+      "positive_prob",
+      "model_version"
+    ],
+    "q3_submission": [
+      "sample_id",
+      "source_file",
+      "polarity",
+      "intensity",
+      "negative_prob",
+      "neutral_prob",
+      "positive_prob",
+      "main_modality",
+      "text_attribution",
+      "audio_attribution",
+      "vision_attribution",
+      "evidence_file",
+      "mapping_status",
+      "model_version"
+    ]
+  }
+}

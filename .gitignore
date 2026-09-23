@@ -1,0 +1,37 @@
+# Original or generated datasets, local models, and installed dependencies.
+/data/*
+!/data/processed/
+/data/processed/*
+!/data/processed/q1/
+/models/
+/vendor/
+/checkpoints/
+/submission/
+
+# Local audit scratch, repeated integrity snapshots, and run logs.
+/results/t0_before_fix/
+/results/codex_review/t0_failcheck_*/
+/results/codex_review/raw_integrity_*.json
+/results/q1_full_run.log
+/results/q1_full_rerun.log
+/results/q1_*stderr*.txt
+/results/q1_import_error.txt
+
+# Python and editor artifacts.
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.idea/
+.vscode/
+
+# Do not accidentally commit raw media, pretrained weights or archives elsewhere.
+*.mp4
+*.wav
+*.zip
+*.safetensors
+*.pt
+*.pth
+*.pkl
+*.xlsx

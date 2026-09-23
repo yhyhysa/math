@@ -1,0 +1,31 @@
+{
+  "project_root": "D:/第二十三届中国研究生数学建模竞赛 - 中文题目/中文题目/E题",
+  "engine_dir": "工程",
+  "python_exe": "D:/第二十三届中国研究生数学建模竞赛 - 中文题目/中文题目/E题/训练demo/.venv/Scripts/python.exe",
+  "raw_dir": "工程/data/raw",
+  "extracted_dir": "工程/data/raw/extracted",
+  "processed_dir": "工程/data/processed",
+  "cache_dir": "工程/data/processed/cache",
+  "checkpoint_dir": "工程/checkpoints",
+  "results_dir": "工程/results",
+  "figures_dir": "工程/figures",
+  "submission_dir": "工程/submission",
+  "seed_list": [17, 42, 2026],
+  "aligned_len": 50,
+  "expected_shapes": {
+    "text": [50, 768],
+    "text_bert": [3, 50],
+    "audio": [50, 74],
+    "vision": [50, 35]
+  },
+  "splits": { "train": 3395, "valid": 728, "test": 727 },
+  "media": {
+    "fps": 2.0,
+    "decode_backends": ["ffprobe", "pyav", "opencv"],
+    "require_real_pts": true
+  },
+  "video_attachment1_root": "工程/data/raw/extracted/E题数据/附件1-数据集原始多模态样本/MOSEI数据集部分原始视频-100条",
+  "attachment2_root": "工程/data/raw/extracted/E题数据/附件2-数据集特征文件",
+  "attachment3_root": "工程/data/raw/extracted/E题数据/附件3-模态缺失特征样本",
+  "attachment4_root": "工程/data/raw/extracted/E题数据/附件4-可解释专项视频样本与特征文件/附件4-可解释专项视频样本与特征文件"
+}

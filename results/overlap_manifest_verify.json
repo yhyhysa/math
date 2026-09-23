@@ -1,0 +1,200 @@
+{
+  "timestamp_utc": "2026-09-23T09:13:40.628445+00:00",
+  "elapsed_seconds": 0.37,
+  "status": "PASS",
+  "errors": [],
+  "checks": {
+    "excel_sheets": [
+      "label",
+      "修复说明"
+    ],
+    "label_sheet_row_count": 100,
+    "label_sheet_columns": [
+      "video_id",
+      "clip_id",
+      "text",
+      "label",
+      "annotation"
+    ],
+    "raw_video_id_sample_first5": [
+      "'-3g5yACwYnA'",
+      "'-3g5yACwYnA'",
+      "'-3g5yACwYnA'",
+      "'-3g5yACwYnA'",
+      "'-3nNcZdcdvU'"
+    ],
+    "raw_clip_id_sample_first5": [
+      "np.int64(13)",
+      "np.int64(3)",
+      "np.int64(2)",
+      "np.int64(9)",
+      "np.int64(5)"
+    ],
+    "attachment1_key_count": 100,
+    "attachment1_unique_key_count": 100,
+    "attachment1_unique_video_id_count": 37,
+    "polarity_counts": {
+      "Positive": 57,
+      "Neutral": 25,
+      "Negative": 18
+    },
+    "label_sign_vs_annotation_mismatches": [],
+    "video_files_missing": [],
+    "video_files_missing_count": 0,
+    "recomputed_sample_id_matches_by_split": {
+      "train": 11,
+      "valid": 0,
+      "test": 7
+    },
+    "recomputed_sample_id_matches_total": 18,
+    "recomputed_video_id_matches_by_split": {
+      "train": 16,
+      "valid": 2,
+      "test": 6
+    },
+    "recomputed_video_id_matches_total": 24,
+    "recomputed_overlap_rows": [
+      {
+        "sample_id": "-HwX2H8Z4hY$_$9",
+        "attachment2_split": "train",
+        "video_id": "-HwX2H8Z4hY",
+        "clip_id": "9"
+      },
+      {
+        "sample_id": "-THoVjtIkeU$_$2",
+        "attachment2_split": "train",
+        "video_id": "-THoVjtIkeU",
+        "clip_id": "2"
+      },
+      {
+        "sample_id": "-a55Q6RWvTA$_$3",
+        "attachment2_split": "train",
+        "video_id": "-a55Q6RWvTA",
+        "clip_id": "3"
+      },
+      {
+        "sample_id": "-aqamKhZ1Ec$_$0",
+        "attachment2_split": "train",
+        "video_id": "-aqamKhZ1Ec",
+        "clip_id": "0"
+      },
+      {
+        "sample_id": "-dxfTGcXJoc$_$0",
+        "attachment2_split": "train",
+        "video_id": "-dxfTGcXJoc",
+        "clip_id": "0"
+      },
+      {
+        "sample_id": "-dxfTGcXJoc$_$6",
+        "attachment2_split": "train",
+        "video_id": "-dxfTGcXJoc",
+        "clip_id": "6"
+      },
+      {
+        "sample_id": "-lzEya4AM_4$_$6",
+        "attachment2_split": "train",
+        "video_id": "-lzEya4AM_4",
+        "clip_id": "6"
+      },
+      {
+        "sample_id": "-mJ2ud6oKI8$_$9",
+        "attachment2_split": "train",
+        "video_id": "-mJ2ud6oKI8",
+        "clip_id": "9"
+      },
+      {
+        "sample_id": "-tPCytz4rww$_$16",
+        "attachment2_split": "train",
+        "video_id": "-tPCytz4rww",
+        "clip_id": "16"
+      },
+      {
+        "sample_id": "-wny0OAz3g8$_$0",
+        "attachment2_split": "train",
+        "video_id": "-wny0OAz3g8",
+        "clip_id": "0"
+      },
+      {
+        "sample_id": "-wny0OAz3g8$_$5",
+        "attachment2_split": "train",
+        "video_id": "-wny0OAz3g8",
+        "clip_id": "5"
+      },
+      {
+        "sample_id": "-AUZQgSxyPQ$_$2",
+        "attachment2_split": "test",
+        "video_id": "-AUZQgSxyPQ",
+        "clip_id": "2"
+      },
+      {
+        "sample_id": "-HeZS2-Prhc$_$2",
+        "attachment2_split": "test",
+        "video_id": "-HeZS2-Prhc",
+        "clip_id": "2"
+      },
+      {
+        "sample_id": "-MeTTeMJBNc$_$0",
+        "attachment2_split": "test",
+        "video_id": "-MeTTeMJBNc",
+        "clip_id": "0"
+      },
+      {
+        "sample_id": "-RfYyzHpjk4$_$2",
+        "attachment2_split": "test",
+        "video_id": "-RfYyzHpjk4",
+        "clip_id": "2"
+      },
+      {
+        "sample_id": "-s9qJ7ATP7w$_$5",
+        "attachment2_split": "test",
+        "video_id": "-s9qJ7ATP7w",
+        "clip_id": "5"
+      },
+      {
+        "sample_id": "-s9qJ7ATP7w$_$6",
+        "attachment2_split": "test",
+        "video_id": "-s9qJ7ATP7w",
+        "clip_id": "6"
+      },
+      {
+        "sample_id": "-yRb-Jum7EQ$_$1",
+        "attachment2_split": "test",
+        "video_id": "-yRb-Jum7EQ",
+        "clip_id": "1"
+      }
+    ],
+    "attachment2_internal_video_overlap": {
+      "train_valid": 0,
+      "train_test": 0,
+      "valid_test": 0
+    },
+    "delivered_csv_rows": 18,
+    "delivered_csv_columns": [
+      "sample_id",
+      "attachment2_split",
+      "video_id",
+      "clip_id"
+    ],
+    "delivered_matches_recompute": true,
+    "manifest_row_count": 245,
+    "extracted_file_count_including_ds_store": 245,
+    "extracted_data_file_count_excluding_ds_store": 244,
+    "manifest_unique_path_count": 245,
+    "manifest_path_set_matches_disk": true,
+    "manifest_empty_sha256_count": 0,
+    "manifest_spot_rehash_count": 12,
+    "manifest_spot_rehash_mismatches": []
+  },
+  "inputs": {
+    "label_100_xlsx": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\data\\raw\\extracted\\E题数据\\附件1-数据集原始多模态样本\\MOSEI数据集部分原始视频-100条\\label-100.xlsx",
+    "label_100_xlsx_sha256": "827334f782b1f242c84ad944a657bc7f7c63643f71ae9c977811a3eecdd3ab33",
+    "aligned_50_pkl": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\data\\raw\\extracted\\E题数据\\附件2-数据集特征文件\\aligned_50.pkl"
+  },
+  "artefacts": {
+    "cross_attachment_overlap_csv": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\results\\cross_attachment_overlap.csv",
+    "cross_attachment_overlap_csv_sha256": "7a12bdb265ab87ac1321b59b67803044b2a83084420ab5046b64e6dd3699d451",
+    "input_manifest_csv": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\results\\input_manifest.csv",
+    "input_manifest_csv_sha256": "c233346e7963b3a57c6edd2ce6641f6ef83945e48d76886e7da2c856e3fa2896"
+  },
+  "scope": "Recomputation of Attachment1 x Attachment2 overlap and manifest completeness; read-only on inputs."
+}

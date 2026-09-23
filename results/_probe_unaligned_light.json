@@ -1,0 +1,20 @@
+{
+ "data\\raw\\extracted\\E题数据\\附件2-数据集特征文件\\unaligned_50.pkl": {
+  "size_bytes": 2897003035,
+  "light": {
+   "bytes_read": 4194304,
+   "stream_note": "ValueError",
+   "strings": [
+    "train",
+    "raw_text",
+    "numpy.core.multiarray",
+    "_reconstruct",
+    "numpy",
+    "ndarray",
+    "dtype",
+    "U1662",
+    "<"
+   ]
+  }
+ }
+}
