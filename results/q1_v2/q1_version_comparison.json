@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "samples": 100,
+  "cropped_clips": 27,
+  "zero_face_clips_before": 24,
+  "zero_face_clips_after": 5,
+  "face_frames_before": 5595,
+  "face_frames_after": 7110,
+  "face_frames_gained": 1521,
+  "face_frames_lost": 6,
+  "vision_valid_tokens_before": 1562,
+  "vision_valid_tokens_after": 2008,
+  "priority_review_clips": 32,
+  "errors": []
+}

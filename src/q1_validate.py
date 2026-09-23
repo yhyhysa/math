@@ -1,6 +1,7 @@
 """Independent structural validation of all Q1 outputs; run from 工程."""
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import json
@@ -10,8 +11,6 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data/processed/q1"
-INVENTORY = ROOT / "results/q1_feature_inventory.csv"
 
 
 def sha256(path: Path) -> str:
@@ -23,7 +22,13 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
-    with INVENTORY.open(encoding="utf-8-sig", newline="") as f:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--variant", choices=("q1", "q1_v2"), default="q1")
+    args = parser.parse_args()
+    data = ROOT / "data/processed" / args.variant
+    results = ROOT / "results" / ("q1_v2" if args.variant == "q1_v2" else "")
+    results.mkdir(parents=True, exist_ok=True)
+    with (results / "q1_feature_inventory.csv").open(encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
     errors = []
     statuses = Counter(r["status"] for r in rows)
@@ -34,7 +39,7 @@ def main() -> int:
         errors.append(f"Inventory must contain 100 unique IDs; got {len(rows)}")
     for row in rows:
         sid = row["sample_id"]
-        meta_path, npz_path = DATA / f"{sid}.json", DATA / f"{sid}.npz"
+        meta_path, npz_path = data / f"{sid}.json", data / f"{sid}.npz"
         try:
             m = json.loads(meta_path.read_text(encoding="utf-8"))
             with np.load(npz_path, allow_pickle=False) as x:
@@ -92,6 +97,10 @@ def main() -> int:
                     review_rows.append({"sample_id": sid, "reason": "low_face_coverage",
                                         "word": "", "start_s": "", "end_s": "", "score": "",
                                         "face_frame_fraction": round(face_fraction, 3)})
+                if m.get("visual_refinement", {}).get("manual_face_identity_review_required"):
+                    review_rows.append({"sample_id": sid, "reason": "crop_face_identity_review",
+                                        "word": "", "start_s": "", "end_s": "", "score": "",
+                                        "face_frame_fraction": round(face_fraction, 3)})
                 for t in m["possible_face_switch_times_s"]:
                     review_rows.append({"sample_id": sid, "reason": "possible_face_switch",
                                         "word": "", "start_s": t, "end_s": "", "score": "",
@@ -103,9 +112,9 @@ def main() -> int:
               "unresolved_words": total_unresolved, "unresolved_reasons": dict(reasons),
               "audio_valid_tokens": total_audio, "vision_valid_tokens": total_vision,
               "errors": errors}
-    target = ROOT / "results/q1_validation.json"
+    target = results / "q1_validation.json"
     target.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
-    with (ROOT / "results/q1_review_queue.csv").open("w", encoding="utf-8-sig", newline="") as f:
+    with (results / "q1_review_queue.csv").open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=("sample_id", "reason", "word", "start_s", "end_s", "score", "face_frame_fraction"))
         writer.writeheader()
         writer.writerows(review_rows)

@@ -39,7 +39,7 @@ DEFAULT_IDS = (
 
 
 def run_one(meta: dict, name: str, setting: tuple[float, float, float, float],
-            fps: float, contact_sheets: bool) -> dict:
+            fps: float, contact_sheets: bool, out: Path) -> dict:
     detect_conf, presence_conf, track_conf, crop_ratio = setting
     options = mp.tasks.vision.FaceLandmarkerOptions(
         base_options=mp.tasks.BaseOptions(model_asset_path="models/face_landmarker.task"),
@@ -93,7 +93,7 @@ def run_one(meta: dict, name: str, setting: tuple[float, float, float, float],
             ax.set_title(f"{t:.2f} s")
             ax.axis("off")
         fig.suptitle(f"Detected faces for {meta['sample_id'].replace('$', '·')} · {name}")
-        fig.savefig(OUT / f"{meta['sample_id']}_{name}.png", dpi=160, facecolor="white")
+        fig.savefig(out / f"{meta['sample_id']}_{name}.png", dpi=160, facecolor="white")
         plt.close(fig)
     return {"sample_id": meta["sample_id"], "setting": name,
             "detection_threshold": detect_conf, "presence_threshold": presence_conf,
@@ -109,6 +109,8 @@ def main() -> int:
     parser.add_argument("--settings", default=",".join(SETTINGS),
                         help="Comma-separated setting names; defaults to all")
     parser.add_argument("--output", default="threshold_probe.csv", help="CSV filename inside results directory")
+    parser.add_argument("--output-dir", default="q1_face_threshold_probe",
+                        help="Directory name directly inside results")
     parser.add_argument("--no-contact-sheets", action="store_true")
     args = parser.parse_args()
     if args.fps <= 0:
@@ -118,21 +120,24 @@ def main() -> int:
         raise ValueError(f"--settings must use names from {list(SETTINGS)}")
     if Path(args.output).name != args.output or not args.output.endswith(".csv"):
         raise ValueError("--output must be a CSV filename")
-    OUT.mkdir(parents=True, exist_ok=True)
+    if Path(args.output_dir).name != args.output_dir or args.output_dir in (".", ".."):
+        raise ValueError("--output-dir must be one directory name inside results")
+    out = ROOT / "results" / args.output_dir
+    out.mkdir(parents=True, exist_ok=True)
     rows = []
     for sid in args.ids.split(","):
         meta = json.loads((DATA / f"{sid}.json").read_text(encoding="utf-8"))
         for name in names:
-            row = run_one(meta, name, SETTINGS[name], args.fps, not args.no_contact_sheets)
+            row = run_one(meta, name, SETTINGS[name], args.fps, not args.no_contact_sheets, out)
             rows.append(row)
             print(f"{sid} {name}: {row['detected_frames']}/{row['sampled_frames']}", flush=True)
-    with (OUT / args.output).open("w", encoding="utf-8-sig", newline="") as f:
+    with (out / args.output).open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
         writer.writeheader()
         writer.writerows(rows)
     print(json.dumps({"samples": len(set(r["sample_id"] for r in rows)),
                       "settings": names, "rows": len(rows),
-                      "csv": str(OUT / args.output)}, ensure_ascii=False))
+                      "csv": str(out / args.output)}, ensure_ascii=False))
     return 0
 
 

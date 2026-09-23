@@ -1,6 +1,7 @@
 """Recompute Q1 coverage proxies and a four-panel dashboard from actual outputs."""
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import sys
@@ -16,13 +17,15 @@ matplotlib.rcParams["svg.hashsalt"] = "q1-quality-dashboard"
 import matplotlib.pyplot as plt
 import numpy as np
 
-DATA = ROOT / "data/processed/q1"
-RESULTS = ROOT / "results"
-
-
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--variant", choices=("q1", "q1_v2"), default="q1")
+    args = parser.parse_args()
+    data = ROOT / "data/processed" / args.variant
+    results = ROOT / "results" / ("q1_v2" if args.variant == "q1_v2" else "")
+    results.mkdir(parents=True, exist_ok=True)
     rows = []
-    for path in sorted(DATA.glob("*.json")):
+    for path in sorted(data.glob("*.json")):
         m = json.loads(path.read_text(encoding="utf-8"))
         n_words = len(m["words"])
         valid_words = sum(bool(w["valid"]) for w in m["words"])
@@ -36,7 +39,7 @@ def main() -> int:
                      "video_duration_s": m["video_duration_s"]})
     if len(rows) != 100 or len({r["sample_id"] for r in rows}) != 100:
         raise ValueError("Expected 100 unique Q1 samples")
-    target_csv = RESULTS / "q1_quality_proxy_metrics.csv"
+    target_csv = results / "q1_quality_proxy_metrics.csv"
     with target_csv.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
         writer.writeheader()
@@ -67,7 +70,7 @@ def main() -> int:
     fig.suptitle("Q1 automatic coverage proxies (100 clips)", fontsize=14)
     fig.text(.5, -.015, "These are coverage measures, not independently verified timing or face-identity accuracy.",
              ha="center", fontsize=9)
-    base = RESULTS / "q1_quality_proxy_dashboard"
+    base = results / "q1_quality_proxy_dashboard"
     fig.savefig(base.with_suffix(".png"), dpi=300, bbox_inches="tight", facecolor="white")
     fig.savefig(base.with_suffix(".svg"), bbox_inches="tight", facecolor="white", metadata={"Date": None})
     plt.close(fig)
@@ -83,7 +86,7 @@ def main() -> int:
               "definitions": {"word_alignment_coverage": "Count(valid CTC words) / count(transcript whitespace words)",
                               "face_detection_rate": "Count(face-valid sampled frames) / count(sampled video frames)"},
               "limits": "Neither proxy measures manual word-boundary error or correct-speaker face identity."}
-    (RESULTS / "q1_quality_proxy_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    (results / "q1_quality_proxy_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False))
     return 0
 

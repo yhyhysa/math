@@ -60,8 +60,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sample-id", default="-egA8-b7-3M$_$26", help="Exact Q1 sample ID")
     parser.add_argument("--times", default="", help="Four comma-separated original-video seconds")
+    parser.add_argument("--variant", choices=("q1", "q1_v2"), default="q1")
     args = parser.parse_args()
-    path = ROOT / "data/processed/q1" / f"{args.sample_id}.json"
+    path = ROOT / "data/processed" / args.variant / f"{args.sample_id}.json"
     meta = json.loads(path.read_text(encoding="utf-8"))
     video = Path(meta["video_path"])
     if not video.is_file():
@@ -121,12 +122,12 @@ def main() -> int:
     ax_words.set_xlim(0, duration)
     for ax in (ax_words, ax_audio):
         ax.spines[["top", "right"]].set_visible(False)
-    fig.suptitle(f"Q1 alignment review · {meta['sample_id'].replace('$', '·')} · {meta['quality_status']}", fontsize=13)
+    fig.suptitle(f"{args.variant} alignment review · {meta['sample_id'].replace('$', '·')} · {meta['quality_status']}", fontsize=13)
     invalid = [w["text"] for w in meta["words"] if not w["valid"]]
     note = ("Estimated word times require listening to the original audio; face status does not prove speaker identity."
             + (f"  Unresolved words: {', '.join(invalid[:8])}" if invalid else ""))
     fig.text(.5, -.012, note, ha="center", fontsize=8)
-    out = ROOT / "results/q1_review_figures"
+    out = ROOT / "results" / ("q1_v2" if args.variant == "q1_v2" else "") / "q1_review_figures"
     out.mkdir(parents=True, exist_ok=True)
     base = out / f"{meta['sample_id']}_review"
     fig.savefig(base.with_suffix(".png"), dpi=220, bbox_inches="tight", facecolor="white")

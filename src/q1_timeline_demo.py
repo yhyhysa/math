@@ -24,9 +24,9 @@ DATA = ROOT / "data/processed/q1"
 OUT = ROOT / "results/q1_demo"
 
 
-def pick_sample(seed: int, include_review: bool) -> Path:
+def pick_sample(data: Path, seed: int, include_review: bool) -> Path:
     options = []
-    for p in DATA.glob("*.json"):
+    for p in data.glob("*.json"):
         m = json.loads(p.read_text(encoding="utf-8"))
         if (include_review or m["quality_status"] == "PASS") and m["video_face_frames"] > 0:
             options.append(p)
@@ -63,8 +63,11 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=23, help="Reproducible random selection")
     parser.add_argument("--sample-id", help="Plot one exact clip ID instead of random selection")
     parser.add_argument("--include-review", action="store_true", help="Allow clips needing manual review")
+    parser.add_argument("--variant", choices=("q1", "q1_v2"), default="q1")
     args = parser.parse_args()
-    meta_path = DATA / f"{args.sample_id}.json" if args.sample_id else pick_sample(args.seed, args.include_review)
+    data = ROOT / "data/processed" / args.variant
+    out = ROOT / "results" / ("q1_v2" if args.variant == "q1_v2" else "") / "q1_demo"
+    meta_path = data / f"{args.sample_id}.json" if args.sample_id else pick_sample(data, args.seed, args.include_review)
     m = json.loads(meta_path.read_text(encoding="utf-8"))
     duration = max(float(m["video_duration_s"]),
                    float(m["audio_start_s"]) + float(m["audio_decoded_duration_s"]))
@@ -107,8 +110,8 @@ def main() -> int:
     fig.text(0.5, 0.025,
              "Gray = no valid timed feature. BERT token vectors are averaged by word; all panels use the same word time spans.",
              ha="center", fontsize=9)
-    OUT.mkdir(parents=True, exist_ok=True)
-    base = OUT / f"{m['sample_id']}_timeline"
+    out.mkdir(parents=True, exist_ok=True)
+    base = out / f"{m['sample_id']}_timeline"
     fig.savefig(base.with_suffix(".png"), dpi=300, facecolor="white")
     fig.savefig(base.with_suffix(".svg"), facecolor="white", metadata={"Date": None})
     plt.close(fig)
@@ -116,7 +119,7 @@ def main() -> int:
                "status": m["quality_status"], "words": len(m["words"]),
                "duration_s": round(duration, 3), "png": str(base.with_suffix(".png")),
                "svg": str(base.with_suffix(".svg"))}
-    (OUT / "last_demo.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "last_demo.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False))
     return 0
 

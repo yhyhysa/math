@@ -1,0 +1,26 @@
+{
+  "samples": 100,
+  "status": {
+    "PASS": 37,
+    "REVIEW": 63
+  },
+  "word_alignment_coverage_mean": 0.8878,
+  "word_alignment_coverage_median": 1.0,
+  "word_alignment_coverage_micro": 0.913,
+  "face_detection_rate_mean": 0.8719,
+  "face_detection_rate_median": 1.0,
+  "face_detection_rate_micro": 0.91,
+  "zero_face_clips": 5,
+  "word_coverage_band_counts": {
+    "0–0.2": 4,
+    "0.2–0.4": 2,
+    "0.4–0.6": 1,
+    "0.6–0.8": 10,
+    "0.8–1.0": 83
+  },
+  "definitions": {
+    "word_alignment_coverage": "Count(valid CTC words) / count(transcript whitespace words)",
+    "face_detection_rate": "Count(face-valid sampled frames) / count(sampled video frames)"
+  },
+  "limits": "Neither proxy measures manual word-boundary error or correct-speaker face identity."
+}

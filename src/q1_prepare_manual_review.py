@@ -1,6 +1,7 @@
 """Prepare a human-editable review sheet for Q1 without changing source outputs."""
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 from pathlib import Path
@@ -14,13 +15,18 @@ COLUMNS = ("检查层级", "样本ID", "自动状态", "问题类型", "原视�
 
 
 def main() -> None:
-    with (RESULTS / "q1_review_queue.csv").open(encoding="utf-8-sig", newline="") as f:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--variant", choices=("q1", "q1_v2"), default="q1")
+    args = parser.parse_args()
+    data = ROOT / "data/processed" / args.variant
+    results = ROOT / "results" / ("q1_v2" if args.variant == "q1_v2" else "")
+    with (results / "q1_review_queue.csv").open(encoding="utf-8-sig", newline="") as f:
         issues = list(csv.DictReader(f))
     by_id: dict[str, list[dict]] = {}
     for issue in issues:
         by_id.setdefault(issue["sample_id"], []).append(issue)
     rows = []
-    for path in sorted(DATA.glob("*.json")):
+    for path in sorted(data.glob("*.json")):
         meta = json.loads(path.read_text(encoding="utf-8"))
         sid = meta["sample_id"]
         base = {"样本ID": sid, "自动状态": meta["quality_status"],
@@ -33,7 +39,7 @@ def main() -> None:
                                 "待查词": issue["word"], "建议跳转秒": jump,
                                 "自动起点秒": start, "自动终点秒": issue["end_s"],
                                 "对齐分数": issue["score"]})
-    target = RESULTS / "q1_manual_review_sheet.csv"
+    target = results / "q1_manual_review_sheet.csv"
     with target.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=COLUMNS)
         writer.writeheader()
