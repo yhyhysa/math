@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "vendor"))
 
 import matplotlib
 matplotlib.use("Agg")
+matplotlib.rcParams["svg.hashsalt"] = "q1-quality-dashboard"
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -68,7 +69,7 @@ def main() -> int:
              ha="center", fontsize=9)
     base = RESULTS / "q1_quality_proxy_dashboard"
     fig.savefig(base.with_suffix(".png"), dpi=300, bbox_inches="tight", facecolor="white")
-    fig.savefig(base.with_suffix(".svg"), bbox_inches="tight", facecolor="white")
+    fig.savefig(base.with_suffix(".svg"), bbox_inches="tight", facecolor="white", metadata={"Date": None})
     plt.close(fig)
     report = {"samples": len(rows), "status": dict(Counter(r["status"] for r in rows)),
               "word_alignment_coverage_mean": round(float(word.mean()), 4),

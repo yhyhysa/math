@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT / "vendor"))
 
 import matplotlib
 matplotlib.use("Agg")
+matplotlib.rcParams["svg.hashsalt"] = "q1-timeline"
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -109,7 +110,7 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     base = OUT / f"{m['sample_id']}_timeline"
     fig.savefig(base.with_suffix(".png"), dpi=300, facecolor="white")
-    fig.savefig(base.with_suffix(".svg"), facecolor="white")
+    fig.savefig(base.with_suffix(".svg"), facecolor="white", metadata={"Date": None})
     plt.close(fig)
     summary = {"sample_id": m["sample_id"], "seed": args.seed if args.sample_id is None else None,
                "status": m["quality_status"], "words": len(m["words"]),
