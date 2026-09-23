@@ -9,8 +9,8 @@
 | `results/q1_feature_inventory.csv`、`results/q1_validation.json` | 逐样本状态与全量结构检查。 |
 | `results/q1_quality_proxy_metrics.csv`、`results/q1_quality_proxy_report.json` | 自动词对齐覆盖率、人脸检出率及其明确口径。 |
 | `results/q1_review_queue.csv`、`results/q1_manual_review_sheet.csv`、`results/q1_manual_review_instructions.md` | 待人工复核位置及填写说明。人工判定尚未完成。 |
-| `results/q1_demo/`、`results/q1_quality_proxy_dashboard.*` | 现有可视化示例，方便直接查看结果。 |
-| `Q1三模态特征与时间对齐方案.md`、`README.md`、本文件 | 方法、运行边界和交接说明。 |
+| `results/q1_demo/`、`results/q1_review_figures/`、`results/q1_quality_proxy_dashboard.*`、`results/q1_face_threshold_probe/` | 三模态热图、四层原视频审查图、覆盖率图及人脸检测参数试验。 |
+| `Q1三模态特征与时间对齐方案.md`、`README.md`、`运行使用说明.md`、本文件 | 方法、统一运行方法、运行边界和交接说明。 |
 | `AGENTS.md`、`.gitignore`、`.gitattributes`、`requirements-review.txt` | 原始数据保护、提交范围和已上传结果的轻量读取环境。 |
 
 `results/` 中其他小型 T0 审计报告也保留作历史证据。`STATUS.md` 是早期 T0 执行回执，**不是问题一的最新总状态**；问题一以 `results/q1_validation.json` 和本说明为准。
@@ -34,6 +34,8 @@ py -3.12 -m venv .venv
 ```
 
 `src.q1_validate` 应检查 100 个样本、200 个 Q1 文件的形状、掩码、窗口覆盖和特征 SHA；当前结果为 37 条自动 `PASS`、63 条 `REVIEW`、0 条程序失败。绘图命令会重生成自动覆盖率图和随机时间线图。`PASS` 只是自动规则通过；词边界和目标人物仍须回看原视频。
+
+逐个程序的完整命令、参数、输入输出和读图方法请看 [运行使用说明.md](运行使用说明.md)。其中四层审查图需要原始 MP4，人脸试验还需要本地 MediaPipe 模型；仅克隆仓库不能直接重画原始视频帧。
 
 ## 重新从原视频提取时的额外条件
 
