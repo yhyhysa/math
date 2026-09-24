@@ -1,0 +1,21 @@
+{
+  "selected": "C_uni",
+  "decision": "user_confirmed_final_configuration",
+  "date": "2026-09-24",
+  "run_prefix": "q2_c_aug_1layer_concat_eff_tonight_uni_20260924",
+  "seeds": [20260923, 20260924, 20260925],
+  "architecture": "separate",
+  "fusion": "concat",
+  "layers": 1,
+  "learning_rate": 0.0003,
+  "auxiliary_weight": 0.1,
+  "mask_pattern": "single",
+  "modalities": ["text", "audio", "vision"],
+  "parameter_count": 353264,
+  "ensemble": "mean_class_probabilities_and_mean_strength",
+  "original_validation_rule_choice": "C_current",
+  "validation_improvement_claimed": false,
+  "attachment3_result": "results/q2_attachment3_candidate_q2_c_aug_1layer_concat_eff_tonight_uni_20260924",
+  "valid_ensemble_diagnostic": "results/q2_final_c_uni_20260924",
+  "note": "Final configuration confirmed after the comparative experiments; original experimental selection and training metadata remain historical records."
+}

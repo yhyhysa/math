@@ -33,11 +33,16 @@ def longest_run(flags: np.ndarray) -> int:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", choices=("TV", "C"), default="TV",
-                        help="TV: original two-modal model; C: saved three-modal comparator")
+    parser.add_argument("--model", choices=("TV", "C", "C_uni"), default="C_uni",
+                        help="C_uni: final auxiliary-head model; C/TV: historical models")
     parser.add_argument("--candidate-prefix", default=None,
                         help="finished three-modal run prefix without _seed_N; writes a separate A3 result")
     args = parser.parse_args()
+    if args.model == "C_uni":
+        if args.candidate_prefix:
+            parser.error("C_uni fixes its training prefix; use --model C for other candidates")
+        args.model = "C"
+        args.candidate_prefix = "q2_c_aug_1layer_concat_eff_tonight_uni_20260924"
     if args.candidate_prefix and (args.model != "C" or
                                   not re.fullmatch(r"[A-Za-z0-9_-]+", args.candidate_prefix)):
         parser.error("candidate-prefix requires --model C and a safe run prefix")
@@ -175,7 +180,7 @@ def main() -> None:
         writer.writerows(rows)
     summary = {
         "status": ("LOCKED_A3_PREDICTED" if args.model == "TV" else
-                   "VALID_SELECTED_CANDIDATE_A3_PREDICTED" if args.candidate_prefix else
+                   "SAVED_CANDIDATE_A3_PREDICTED" if args.candidate_prefix else
                    "THREE_MODAL_COMPARATOR_A3_PREDICTED"),
         "sample_count": len(rows),
         "bert_sha256": BERT_SHA256,

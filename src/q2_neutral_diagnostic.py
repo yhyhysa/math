@@ -1,7 +1,9 @@
 """Show where neutral A2-valid clips are misclassified by saved Q2 ensembles."""
 from __future__ import annotations
 
+import argparse
 import json
+import re
 
 import numpy as np
 import torch
@@ -17,13 +19,22 @@ from src.q2_valid_missing_audit import load_checkpoint
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--candidate", choices=tuple(CONFIGS))
+    parser.add_argument("--output-name", default="q2_tonight_20260924")
+    args = parser.parse_args()
+    if not re.fullmatch(r"[A-Za-z0-9_-]+", args.output_name):
+        parser.error("output-name must be a simple directory name")
     cfg = load_config()
     root = cfg["_engine_dir"]
+    out = root / "results" / args.output_name
+    if (out / "neutral_confusion.csv").exists() or (out / "neutral_summary.json").exists():
+        raise FileExistsError("Preserve the first neutral diagnostic")
     source = cfg["_attachment2_root"] / "aligned_50.pkl"
     if sha256(source) != DATA_SHA256:
         raise ValueError("Pinned A2 source hash differs")
-    selected = json.loads((root / "results/q2_tonight_20260924/selection.json").read_text(encoding="utf-8"))["selected"]
-    candidates = ("C_current",) if selected == "C_current" else ("C_current", selected)
+    selected = args.candidate or json.loads((root / "results/q2_tonight_20260924/selection.json").read_text(encoding="utf-8"))["selected"]
+    candidates = (selected,) if args.candidate or selected == "C_current" else ("C_current", selected)
     valid = prepare(load_pickle(source).splits["valid"])
     if len(valid["class"]) != 728:
         raise ValueError("Expected 728 fixed valid samples")
@@ -60,9 +71,7 @@ def main() -> None:
                              "predicted_class": classes[predicted],
                              "count": int(((valid["class"] == truth) & (predictions == predicted)).sum())})
         summaries[candidate] = metrics(valid["class"], valid["value"], probabilities, strengths)
-    out = root / "results/q2_tonight_20260924"
-    if (out / "neutral_confusion.csv").exists() or (out / "neutral_summary.json").exists():
-        raise FileExistsError("Preserve the first neutral diagnostic")
+    out.mkdir(parents=True, exist_ok=True)
     write_csv(out / "neutral_confusion.csv", rows)
     (out / "neutral_summary.json").write_text(json.dumps(summaries, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"selected": selected, "neutral_f1": {key: value["f1_1"] for key, value in summaries.items()}},

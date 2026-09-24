@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "final_model": "C_uni",
+  "training_records": [
+    {
+      "seed": 20260923,
+      "best_epoch": 5,
+      "epochs": 30,
+      "checkpoint_sha256": "e7ce24f25d825ba3499ddbd9081f01e088eccee0c4cde2b8bf40812f2bb2dc1e"
+    },
+    {
+      "seed": 20260924,
+      "best_epoch": 7,
+      "epochs": 30,
+      "checkpoint_sha256": "ab62160d93dc31aa5bb8d828a145edd59a7fe55c9c2f6b7ccdb9891851784a9d"
+    },
+    {
+      "seed": 20260925,
+      "best_epoch": 4,
+      "epochs": 30,
+      "checkpoint_sha256": "6fe3175003556c376298c3293ba1fa9e5c784ee5d1a8730d794472d1d5bfe5b8"
+    }
+  ],
+  "a3_rows": 30,
+  "a3_counts": {
+    "negative": 6,
+    "neutral": 9,
+    "positive": 15
+  },
+  "valid_confusion_total": 728,
+  "paper_local_links_missing": [],
+  "new_inference_exit_code": 0,
+  "valid_diagnostic_exit_code": 0,
+  "raw_integrity_before": "PASS, 245 files",
+  "raw_integrity_after": "PASS, 245 files"
+}
