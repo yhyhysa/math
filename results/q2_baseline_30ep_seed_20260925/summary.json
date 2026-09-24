@@ -1,0 +1,53 @@
+{
+  "status": "FIRST_BASELINE_ONLY",
+  "model": "A_clean_masked_mean_MLP",
+  "train_n": 3395,
+  "valid_n": 728,
+  "scenarios": 54,
+  "best_epoch": 5,
+  "epochs_ran": 30,
+  "best": {
+    "selection_J": 0.6218549685719958,
+    "clean": {
+      "accuracy": 0.6332417582417582,
+      "macro_f1": 0.6137396783494787,
+      "f1_0": 0.645320197044335,
+      "f1_1": 0.4831168831168831,
+      "f1_2": 0.7127819548872181,
+      "mae": 0.6124721765518188,
+      "pearson": 0.6307822614699417,
+      "sign_conflict": 0.01510989010989011
+    },
+    "masked_mean": {
+      "accuracy": 0.5964336589336589,
+      "macro_f1": 0.5781334918541114,
+      "mae": 0.6314026360158567
+    }
+  },
+  "parameter_count": 130180,
+  "class_counts_train": [
+    967,
+    758,
+    1670
+  ],
+  "class_weights": [
+    1.0379084759726493,
+    1.1722971058636251,
+    0.7897944181637252
+  ],
+  "seed": 20260925,
+  "device": "cuda",
+  "seconds": 28.14634890000002,
+  "max_epochs": 30,
+  "patience": 30,
+  "run_name": "q2_baseline_30ep_seed_20260925",
+  "source": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\data\\raw\\extracted\\E题数据\\附件2-数据集特征文件\\aligned_50.pkl",
+  "source_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "bert_snapshot": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\models\\bert-base-uncased\\86b5e0934494bd15c9632b12f734a8a67f723594",
+  "bert_sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+  "torch": "2.7.1+cu128",
+  "transformers": "5.17.0",
+  "command": "python -m src.q2_train_baseline --seed 20260925 --epochs 30 --patience 30 --run-name q2_baseline_30ep_seed_20260925",
+  "checkpoint": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\checkpoints\\q2_baseline_30ep_seed_20260925\\best.pt",
+  "note": "A2 train fits weights/statistics, A2 valid selects epoch. A2 test/A3/Q1 unused."
+}

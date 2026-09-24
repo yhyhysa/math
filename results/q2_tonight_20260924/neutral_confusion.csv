@@ -1,0 +1,10 @@
+﻿candidate,true_class,predicted_class,count
+C_current,negative,negative,144
+C_current,negative,neutral,34
+C_current,negative,positive,28
+C_current,neutral,negative,38
+C_current,neutral,neutral,89
+C_current,neutral,positive,57
+C_current,positive,negative,47
+C_current,positive,neutral,60
+C_current,positive,positive,231

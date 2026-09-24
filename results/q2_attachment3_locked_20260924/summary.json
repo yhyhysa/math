@@ -1,0 +1,16 @@
+{
+  "status": "LOCKED_A3_PREDICTED",
+  "sample_count": 30,
+  "bert_sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+  "model": "q2_aug_TV_step4_20260924, seeds 20260923/20260924/20260925",
+  "labels_used": false,
+  "a3_used_for_model_selection": false,
+  "prediction_counts": {
+    "negative": 6,
+    "neutral": 11,
+    "positive": 13
+  },
+  "audio_zero_clips": 27,
+  "vision_zero_clips": 27,
+  "note": "A3 has no labels. Probabilities are model scores, not calibrated certainty."
+}

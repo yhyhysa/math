@@ -19,6 +19,7 @@
 /results/q1_import_error.txt
 /results/q1_v2/q1_review_figures/
 /results/q1_v2_face_contact_sheets/
+*.log
 
 # Python and editor artifacts.
 __pycache__/

@@ -1,0 +1,50 @@
+{
+  "status": "PAIRED_MODEL_A_COMPARISON",
+  "seeds": [
+    20260923,
+    20260924,
+    20260925
+  ],
+  "baseline": "q2_baseline_30ep_seed_<seed>",
+  "augmented": "q2_aug_20260924_seed_<seed>",
+  "delta_direction": "augmented minus baseline",
+  "mean_delta": {
+    "delta_selection_J": {
+      "mean": -0.0025674127067256323,
+      "sample_sd": 0.008934465325542982
+    },
+    "delta_clean_accuracy": {
+      "mean": -0.008241758241758212,
+      "sample_sd": 0.0036342737789348645
+    },
+    "delta_clean_macro_f1": {
+      "mean": -0.002208203212121044,
+      "sample_sd": 0.008055700368248339
+    },
+    "delta_clean_mae": {
+      "mean": -0.01047968864440918,
+      "sample_sd": 0.016021773127355546
+    },
+    "delta_clean_pearson": {
+      "mean": -0.007632646007232384,
+      "sample_sd": 0.009142871729456646
+    },
+    "delta_masked_mean_accuracy": {
+      "mean": -0.0007461674128339535,
+      "sample_sd": 0.008496336587721491
+    },
+    "delta_masked_mean_macro_f1": {
+      "mean": 0.0016503755562499538,
+      "sample_sd": 0.004745975147038999
+    },
+    "delta_masked_mean_mae": {
+      "mean": -0.0040334978221375035,
+      "sample_sd": 0.011690175052013812
+    },
+    "delta_masked_mean_pearson": {
+      "mean": -0.008032445538165437,
+      "sample_sd": 0.012600504785369875
+    }
+  },
+  "note": "Validation-only comparison; no A2 test or A3 used."
+}

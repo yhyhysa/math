@@ -1,0 +1,17 @@
+{
+  "status": "THREE_MODAL_COMPARATOR_A3_PREDICTED",
+  "sample_count": 30,
+  "bert_sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+  "model": "q2_c_aug_1layer_concat_eff_step9_lr3e4_20260924, seeds 20260923/20260924/20260925",
+  "modalities_used": "text,audio,vision",
+  "labels_used": false,
+  "a3_used_for_model_selection": false,
+  "prediction_counts": {
+    "negative": 6,
+    "neutral": 9,
+    "positive": 15
+  },
+  "audio_zero_clips": 27,
+  "vision_zero_clips": 27,
+  "note": "A3 has no labels. Probabilities are model scores, not calibrated certainty."
+}

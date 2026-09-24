@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "valid_samples": 16,
+  "checks": [
+    {
+      "group": "A",
+      "pooled_max_abs_error": 0.0,
+      "temporal_prediction_max_abs_error": {
+        "early": 0.0,
+        "separate_concat": 0.0,
+        "separate_gate": 0.0
+      },
+      "masked_positions": 112
+    },
+    {
+      "group": "V",
+      "pooled_max_abs_error": 0.0,
+      "temporal_prediction_max_abs_error": {
+        "early": 0.0,
+        "separate_concat": 0.0,
+        "separate_gate": 0.0
+      },
+      "masked_positions": 112
+    },
+    {
+      "group": "AV",
+      "pooled_max_abs_error": 0.0,
+      "temporal_prediction_max_abs_error": {
+        "early": 0.0,
+        "separate_concat": 0.0,
+        "separate_gate": 0.0
+      },
+      "masked_positions": 224
+    }
+  ]
+}

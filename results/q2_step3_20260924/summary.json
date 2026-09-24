@@ -1,0 +1,20 @@
+{
+  "status": "MODEL_A_B_VALIDATION_COMPARISON",
+  "seeds": [
+    20260923,
+    20260924,
+    20260925
+  ],
+  "model_B_tag": "20260924",
+  "ranked_by_J": [
+    "A_aug",
+    "A_clean",
+    "B2_aug",
+    "B1_aug",
+    "B1_clean",
+    "B2_clean"
+  ],
+  "best_candidate": "A_aug",
+  "scenario_fingerprint_verified": true,
+  "note": "Validation-only selection. No A2 test, A3, A4 or Q1 features used."
+}

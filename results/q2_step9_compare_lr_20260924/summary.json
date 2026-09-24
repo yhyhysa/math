@@ -1,0 +1,22 @@
+{
+  "status": "VALIDATION_COMPARISON_ONLY",
+  "stage": "lr",
+  "candidates": [
+    "TV_old",
+    "TV_effective",
+    "TV_clean",
+    "TAV_MLP",
+    "B_early",
+    "C_concat",
+    "C_concat_lr"
+  ],
+  "seeds": [
+    20260923,
+    20260924,
+    20260925
+  ],
+  "source_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "bert_sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+  "same_54_scenarios": true,
+  "note": "A2 test and A3/A4 unused; repeated valid comparisons are exploratory."
+}

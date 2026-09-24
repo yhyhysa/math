@@ -1,0 +1,20 @@
+{
+  "status": "VALIDATION_ABLATION_ONLY",
+  "seeds": [
+    20260923,
+    20260924,
+    20260925
+  ],
+  "candidates": [
+    "A_T",
+    "A_TA",
+    "A_TV",
+    "A_TAV",
+    "B_old",
+    "B_mask"
+  ],
+  "source_sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+  "bert_sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+  "scenario_fingerprint_verified": true,
+  "note": "A2 test, A3, A4, Q1 features and outside sentiment data unused."
+}

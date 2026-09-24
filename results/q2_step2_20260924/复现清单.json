@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-24T03:03:17.340024+00:00",
+  "random_seed": 20260923,
+  "input_files": [
+    {
+      "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\data\\raw\\extracted\\E题数据\\附件2-数据集特征文件\\aligned_50.pkl",
+      "sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd",
+      "bytes": 993842861
+    },
+    {
+      "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\models\\bert-base-uncased\\86b5e0934494bd15c9632b12f734a8a67f723594\\model.safetensors",
+      "sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+      "bytes": 440449768
+    },
+    {
+      "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\src\\q2_train_baseline.py",
+      "sha256": "eb5056b9548472a573ec3fdbfcc9eef8ca9f3f9c744b3a15161c37ad32fcb366",
+      "bytes": 26173
+    },
+    {
+      "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\src\\run_q2_augmented.ps1",
+      "sha256": "70f850e49246d73a67fbbbd0771d4a0ba16b0b08dee86460663d5ec7aadbc985",
+      "bytes": 2362
+    },
+    {
+      "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\题目分析报告.md",
+      "sha256": "5d61b46c4d8e4d92556b482bd78e98419c3cfe46e91c6fd16bf0cdd9aa7f5de0",
+      "bytes": 20502
+    }
+  ],
+  "runtime": {
+    "name": "python",
+    "version": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "dependencies": {
+      "numpy": "2.3.5",
+      "torch": "2.7.1+cu128",
+      "transformers": "5.17.0"
+    }
+  },
+  "key_parameters": {
+    "task": "Q2 step2 paired model A",
+    "seeds": [
+      20260923,
+      20260924,
+      20260925
+    ],
+    "epochs": 30,
+    "patience": 30,
+    "mask_ratios": [
+      0.1,
+      0.3,
+      0.5
+    ],
+    "validation_scenarios": 54
+  },
+  "reproduce_command": "powershell.exe -ExecutionPolicy Bypass -File .\\src\\run_q2_augmented.ps1 -Mode full -Tag fresh_run_01"
+}
