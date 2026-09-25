@@ -18,6 +18,7 @@ import matplotlib
 matplotlib.use("Agg")
 matplotlib.rcParams["svg.hashsalt"] = "q1-review-figure"
 import matplotlib.pyplot as plt
+from matplotlib.patches import ConnectionPatch
 import numpy as np
 
 
@@ -60,6 +61,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--sample-id", default="-egA8-b7-3M$_$26", help="Exact Q1 sample ID")
     parser.add_argument("--times", default="", help="Four comma-separated original-video seconds")
+    parser.add_argument("--word-indices", default="", help="Four comma-separated 1-based transcript word indices")
     parser.add_argument("--variant", choices=("q1", "q1_v2"), default="q1")
     args = parser.parse_args()
     path = ROOT / "data/processed" / args.variant / f"{args.sample_id}.json"
@@ -71,8 +73,32 @@ def main() -> int:
         face_time = arr["video_pts_s"].astype(float)
         face_valid = arr["video_frame_valid"].astype(bool)
     duration = max(float(meta["video_duration_s"]), float(face_time[-1]))
-    targets = ([float(x) for x in args.times.split(",")] if args.times else
-               [duration * q for q in (.16, .38, .62, .84)])
+    words = meta['words']
+    if args.times and args.word_indices:
+        raise ValueError('Use --times or --word-indices, not both')
+    eligible = [i for i,w in enumerate(words) if w['valid'] and w['start'] is not None
+                and w['end'] is not None and w['end'] > w['start']]
+    if args.word_indices:
+        selected = [int(x)-1 for x in args.word_indices.split(',')]
+        if len(selected)!=4 or len(set(selected))!=4 or any(i not in eligible for i in selected):
+            raise ValueError('Choose four distinct valid timed words (1-based indices)')
+    elif args.times:
+        selected = []
+    else:
+        if len(eligible)<4:
+            raise ValueError('Fewer than four valid timed words; no unrelated frames substituted')
+        selected = [eligible[int(i)] for i in np.linspace(0,len(eligible)-1,4).round()]
+    mappings=[]
+    targets=[]
+    for i in selected:
+        w=words[i];a,b=float(w['start']),float(w['end']);mid=(a+b)/2
+        inside=np.flatnonzero((face_time>=a)&(face_time<=b))
+        k=int(inside[np.argmin(abs(face_time[inside]-mid))]) if len(inside) else None
+        targets.append(float(face_time[k]) if k is not None else mid)
+        mappings.append({'word_index':i+1,'word':w['text'],'start_s':a,'end_s':b,
+                         'sampled_frame_index':k,'sampled_face_valid':bool(face_valid[k]) if k is not None else None})
+    if args.times:
+        targets=[float(x) for x in args.times.split(',')]
     if len(targets) != 4 or any(t < 0 or t > duration for t in targets):
         raise ValueError("--times must contain four seconds inside the clip duration")
     frames = choose_frames(video, targets)
@@ -97,7 +123,7 @@ def main() -> int:
         ax_words.broken_barh([(a, max(b - a, .005))], (.05, .47), facecolors=color, alpha=.9)
         ax_words.text((a + b) / 2, .69, word["text"], rotation=55, ha="left", va="bottom", fontsize=7.5)
     ax_words.set(ylim=(0, 1.52), yticks=[], title="Transcript words at estimated speech times")
-    ax_words.text(.99, .96, "Blue: accepted   Orange: low confidence", transform=ax_words.transAxes,
+    ax_words.text(.99, 1.10, "Blue: accepted   Orange: low confidence", transform=ax_words.transAxes,
                   ha="right", va="top", fontsize=8)
 
     ax_audio.fill_between(rms_time, rms, color="#7776A8", alpha=.30)
@@ -113,12 +139,23 @@ def main() -> int:
     for t, _ in frames:
         for ax in (ax_words, ax_audio, ax_face):
             ax.axvline(t, color="#707070", linewidth=.7, linestyle="--", alpha=.55)
-    for ax, (t, img) in zip(frame_axes, frames):
+    for j,(ax, (t, img)) in enumerate(zip(frame_axes, frames)):
         ax.imshow(img)
         ax.axis("off")
         nearest = int(np.argmin(abs(face_time - t)))
-        status = "face detected" if face_valid[nearest] else "no face detected"
-        ax.set_title(f"Original frame {t:.2f} s\n{status}", fontsize=9)
+        status = "nearest sampled face: yes" if face_valid[nearest] else "nearest sampled face: no"
+        if mappings:
+            info=mappings[j];a,b=info['start_s'],info['end_s']
+            info['actual_frame_s']=t;info['frame_inside_word']=a<=t<=b
+            status=('stored face: yes' if info['sampled_face_valid'] else 'stored face: no') if info['sampled_frame_index'] is not None else 'no stored sample in word; display only'
+            if not info['frame_inside_word']:status+='; OUTSIDE word interval'
+            ax.set_title(f"[{j+1}] word {info['word_index']}: {info['word']}\nWord {a:.3f}–{b:.3f} s | frame {t:.3f} s\n{status}",fontsize=8,bbox={'facecolor':'white','edgecolor':'none','alpha':.9})
+            for track in (ax_words,ax_audio,ax_face):track.axvspan(a,b,color='#E5A633',alpha=.15)
+            ax_words.text((a+b)/2,1.36,f'[{j+1}]',ha='center',fontsize=10,color='#A66500')
+            fig.add_artist(ConnectionPatch(xyA=(t,-.18),coordsA=ax_face.transData,
+                                           xyB=(.5,1),coordsB=ax.transAxes,color='#A66500',lw=.8))
+        else:
+            ax.set_title(f"Manual time: original frame {t:.2f} s\n{status}",fontsize=9)
     ax_words.set_xlim(0, duration)
     for ax in (ax_words, ax_audio):
         ax.spines[["top", "right"]].set_visible(False)
@@ -127,12 +164,15 @@ def main() -> int:
     note = ("Estimated word times require listening to the original audio; face status does not prove speaker identity."
             + (f"  Unresolved words: {', '.join(invalid[:8])}" if invalid else ""))
     fig.text(.5, -.012, note, ha="center", fontsize=8)
-    out = ROOT / "results" / ("q1_v2" if args.variant == "q1_v2" else "") / "q1_review_figures"
+    out = ROOT / 'results' / 'q1_word_review_20260925' / args.variant
     out.mkdir(parents=True, exist_ok=True)
     base = out / f"{meta['sample_id']}_review"
     fig.savefig(base.with_suffix(".png"), dpi=220, bbox_inches="tight", facecolor="white")
     fig.savefig(base.with_suffix(".svg"), bbox_inches="tight", facecolor="white", metadata={"Date": None})
     plt.close(fig)
+    base.with_suffix('.json').write_text(json.dumps({'sample_id':meta['sample_id'],
+        'selection':'word_interval' if mappings else 'manual_time','estimated_times':True,
+        'word_frame_mapping':mappings},ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({"sample_id": meta["sample_id"], "status": meta["quality_status"],
                       "decoded_frames": meta["video_decoded_frames"],
                       "sampled_frames": meta["video_processed_frames"],

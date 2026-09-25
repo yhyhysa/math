@@ -1,0 +1,212 @@
+{
+  "extensions": {
+    "": 1,
+    ".pkl": 102,
+    ".xlsx": 2,
+    ".mp4": 140
+  },
+  "pickle_schemas": [
+    {
+      "files": 1,
+      "example": "E题数据\\附件2-数据集特征文件\\aligned_50.pkl",
+      "fields": [
+        "train",
+        "train.raw_text",
+        "train.audio",
+        "train.vision",
+        "train.id",
+        "train.text_bert",
+        "train.classification_labels",
+        "train.regression_labels",
+        "train.text",
+        "valid",
+        "valid.raw_text",
+        "valid.audio",
+        "valid.vision",
+        "valid.id",
+        "valid.text_bert",
+        "valid.classification_labels",
+        "valid.regression_labels",
+        "valid.text",
+        "test",
+        "test.raw_text",
+        "test.audio",
+        "test.vision",
+        "test.id",
+        "test.text_bert",
+        "test.classification_labels",
+        "test.regression_labels",
+        "test.text"
+      ]
+    },
+    {
+      "files": 1,
+      "example": "E题数据\\附件2-数据集特征文件\\unaligned_50.pkl",
+      "fields": [
+        "train",
+        "train.raw_text",
+        "train.audio",
+        "train.vision",
+        "train.id",
+        "train.text_bert",
+        "train.classification_labels",
+        "train.regression_labels",
+        "train.text",
+        "train.audio_lengths",
+        "train.vision_lengths",
+        "valid",
+        "valid.raw_text",
+        "valid.audio",
+        "valid.vision",
+        "valid.id",
+        "valid.text_bert",
+        "valid.classification_labels",
+        "valid.regression_labels",
+        "valid.text",
+        "valid.audio_lengths",
+        "valid.vision_lengths",
+        "test",
+        "test.raw_text",
+        "test.audio",
+        "test.vision",
+        "test.id",
+        "test.text_bert",
+        "test.classification_labels",
+        "test.regression_labels",
+        "test.text",
+        "test.audio_lengths",
+        "test.vision_lengths"
+      ]
+    },
+    {
+      "files": 30,
+      "example": "E题数据\\附件3-模态缺失特征样本\\对齐版本\\附件3_01.pkl",
+      "fields": [
+        "test",
+        "test.text_bert",
+        "test.vision",
+        "test.audio"
+      ]
+    },
+    {
+      "files": 30,
+      "example": "E题数据\\附件3-模态缺失特征样本\\未对齐版本\\附件3_未对齐版本_01.pkl",
+      "fields": [
+        "test",
+        "test.raw_text",
+        "test.vision",
+        "test.audio"
+      ]
+    },
+    {
+      "files": 20,
+      "example": "E题数据\\附件4-可解释专项视频样本与特征文件\\附件4-可解释专项视频样本与特征文件\\对齐版本\\01.pkl",
+      "fields": [
+        "raw_text",
+        "audio",
+        "vision",
+        "id",
+        "text",
+        "text_bert"
+      ]
+    },
+    {
+      "files": 20,
+      "example": "E题数据\\附件4-可解释专项视频样本与特征文件\\附件4-可解释专项视频样本与特征文件\\未对齐版本\\01.pkl",
+      "fields": [
+        "raw_text",
+        "audio",
+        "vision",
+        "id",
+        "text",
+        "text_bert",
+        "audio_lengths",
+        "vision_lengths"
+      ]
+    }
+  ],
+  "spreadsheets": [
+    {
+      "file": "label.xlsx",
+      "sheets": [
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "first_rows": [
+            [
+              "video_id",
+              "clip_id",
+              "text",
+              "label",
+              "annotation",
+              "mode"
+            ],
+            [
+              "-3g5yACwYnA",
+              "4",
+              "Key brings those types of aspects to a business on new markets, new potentials, and even on our equipment of how things run and operate with a pretty big, long experience with their team.",
+              "1.0",
+              "Positive",
+              "train"
+            ],
+            [
+              "-HwX2H8Z4hY",
+              "3",
+              "Federal spending on education soared eightfold in the past twenty years, rising much faster than inflation",
+              "0.3333333432674408",
+              "Positive",
+              "train"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "file": "label-100.xlsx",
+      "sheets": [
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "first_rows": [
+            [
+              "video_id",
+              "clip_id",
+              "text",
+              "label",
+              "annotation"
+            ],
+            [
+              "-3g5yACwYnA",
+              "13",
+              "They've been able to find solutions or at least bring some answers to the table.",
+              "0.6666666865348816",
+              "Positive"
+            ],
+            [
+              "-3g5yACwYnA",
+              "3",
+              "We're a huge user of adhesives for our operation, called flocking, and we don't have the technical inside compounding or the technical expertise to do these types of things.",
+              "0.0",
+              "Neutral"
+            ]
+          ]
+        },
+        {
+          "sheet": "xl/worksheets/sheet2.xml",
+          "first_rows": [
+            [
+              "检查项目",
+              "结果"
+            ],
+            [
+              "源文件",
+              "C:\\Users\\feelikesummer\\Desktop\\数学建模数据集最终版本-0815\\附件2-数据集特征文件\\英文数据集CMU-MOSEI\\label.xlsx"
+            ],
+            [
+              "筛选依据",
+              "当前本地已有的100个MOSEI视频片段（video_id + clip_id 精确匹配）"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

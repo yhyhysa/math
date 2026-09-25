@@ -1,0 +1,23 @@
+{
+  "equations": 28,
+  "figures": 12,
+  "tables": 11,
+  "source_hashes": {
+    "results/q1_quality_proxy_metrics.csv": "bc9617f39951f2ec02521ddc75ee98fc7756b606c23619ab45592d6438d6ac57",
+    "results\\q1_review_figures\\-egA8-b7-3M$_$26_review.png": "f421401b8d5b15670306085aa23adaf9cf1015a51005976d16b64ed772b27e4a",
+    "results/q2_tonight_20260924/candidate_means.csv": "ed8fc8b6b64674021155c2143a9238f1fdc914c7373eca711b87d726c9fa8b19",
+    "results/q2_final_c_uni_20260924/neutral_confusion.csv": "417cc1b75f2a037223c41b80fdcbc04e978fd5465f4796260446124bbf90c064",
+    "results/q2_c_aug_1layer_concat_eff_tonight_uni_20260924_seed_20260923/scenario_metrics.csv": "acc6b40bbdadf08fd55c604a9a5cbfc05441355b61dfbe15143545de6b64234b",
+    "results/q2_c_aug_1layer_concat_eff_tonight_uni_20260924_seed_20260924/scenario_metrics.csv": "9a49b6f589729f56f11b07deb4fa14684b095749e67cfa4492608d16ba5453ae",
+    "results/q2_c_aug_1layer_concat_eff_tonight_uni_20260924_seed_20260925/scenario_metrics.csv": "057cf83f9a0a89d77fcfd95cd78012df798d59c700ee24b2564838ec6dbabcef",
+    "results/q3_c_uni_validation_full2_20260925/valid_word_check.csv": "cbc92a3ed341c677a7744e4f0720c96ac65039440fc412ab382ae6d0bf4efc92",
+    "results/q3_c_uni_final_20260925/modality_contributions.csv": "8330b7e6b79f4151b1e46b43b302fa3d2dc3c02f2531de87e15d9c7be4ceb5ef",
+    "results/q3_c_uni_final_20260925/key_evidence.csv": "efffb1b62150488cc687e88ecd2c2d32806e9119b383e3c82850a4c3d083bb69",
+    "results/q2_attachment3_candidate_q2_c_aug_1layer_concat_eff_tonight_uni_20260924/predictions.csv": "7201317c5bde2795bbca20a584c172e96c5d9e07b3302573ffbd129e8d49eb64",
+    "results/q3_c_uni_final_20260925/predictions.csv": "53f069837c73814306dd74ecf79b25575fa895cc6504ecdb12cbcda5ef667218",
+    "results/q1_feature_inventory.csv": "02b8ac68cde4ed94f1f43846f62de15a375e47f9c1a2a30d2983526f12777ce6"
+  },
+  "docx_sha256": "3af1ee51409cdb08de362915674129007f291f5e4795bdf774b47a5a8ea1f528",
+  "new_training": false,
+  "q1_version": "q1 baseline; q1_v2 candidate only"
+}

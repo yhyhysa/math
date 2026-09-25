@@ -1,0 +1,32 @@
+{
+  "equations": 28,
+  "figures": 12,
+  "tables": 11,
+  "source_hashes": {
+    "results/q1_quality_proxy_metrics.csv": "bc9617f39951f2ec02521ddc75ee98fc7756b606c23619ab45592d6438d6ac57",
+    "results/q2_tonight_20260924/candidate_means.csv": "ed8fc8b6b64674021155c2143a9238f1fdc914c7373eca711b87d726c9fa8b19",
+    "results/q3_c_uni_final_20260925/modality_contributions.csv": "8330b7e6b79f4151b1e46b43b302fa3d2dc3c02f2531de87e15d9c7be4ceb5ef",
+    "results/q3_c_uni_final_20260925/key_evidence.csv": "efffb1b62150488cc687e88ecd2c2d32806e9119b383e3c82850a4c3d083bb69",
+    "results\\paper_manuscript_v2_20260925\\figures\\alignment.png": "b053a92ae9cfd835add7b6715b711dbc43c8628836187c61940f0a0d54dc30aa",
+    "results\\paper_manuscript_v2_20260925\\figures\\cases.png": "a49d035541797612f169c1c21dfc2813008f4ceb95920bd82aad6d5efe583742",
+    "results\\paper_manuscript_v2_20260925\\figures\\confusion.png": "7eb3a5a1f2a2f4e89ec4b0799f2edb418d1d5679665458f7a263fb607aa4e92f",
+    "results\\paper_manuscript_v2_20260925\\figures\\contributions.png": "5bd72c206933424af04a9a4d0a6142eac132c3f8c6d8ca4b2ea893f9f4034619",
+    "results\\paper_manuscript_v2_20260925\\figures\\faithfulness.png": "5504ed4ad705233db3876c2bfbde69dd2f3cd41d2795e28f32b5bb8a31c4a35f",
+    "results\\paper_manuscript_v2_20260925\\figures\\missing.png": "a5dbaeea292ca7fc50ce929321c332d45b19031852b0ff7a211b2744b4cb16e2",
+    "results\\paper_manuscript_v2_20260925\\figures\\model.png": "365309c10e13392112ba7ee723de30fc60b5211cdd7b27de9ffdb8fd47715a87",
+    "results\\paper_manuscript_v2_20260925\\figures\\q1_crop.png": "b70d9453c064e10b89bd100ada9645613df03bf160ddd04bc668defe847b4c58",
+    "results\\paper_manuscript_v2_20260925\\figures\\q1_example.png": "dde6756c53359874dfa2b1ea3e6478ac87da39e589db480d6a2e961fc9f21eca",
+    "results\\paper_manuscript_v2_20260925\\figures\\q1_quality.png": "ecb04c22a528afe3bd3a11153246e6a8a23f8dac1c7779c42d4aace1db3b2d88",
+    "results\\paper_manuscript_v2_20260925\\figures\\q2_compare.png": "34580387189b66eb6f28ea6e4f9673fbe7a608d7599733c6eb037dc4c1e7999f",
+    "results\\paper_manuscript_v2_20260925\\figures\\route.png": "5638725f589414c52163eed2dc215b0dafacd29037d179d6907923b4e9980beb",
+    "results\\paper_manuscript_v2_20260925\\论文正文.md": "0b1b1bf2f4f2d39b4ff0c0f3b32a436632b000f009fce29ea43dde4b47c3429d",
+    "results/q2_attachment3_candidate_q2_c_aug_1layer_concat_eff_tonight_uni_20260924/predictions.csv": "7201317c5bde2795bbca20a584c172e96c5d9e07b3302573ffbd129e8d49eb64",
+    "results/q3_c_uni_final_20260925/predictions.csv": "53f069837c73814306dd74ecf79b25575fa895cc6504ecdb12cbcda5ef667218",
+    "results/q1_feature_inventory.csv": "02b8ac68cde4ed94f1f43846f62de15a375e47f9c1a2a30d2983526f12777ce6"
+  },
+  "docx_sha256": "e36231d1449dccaf5633cf0abb02e72c63cdbc229c13bf5abf279f807b43f430",
+  "new_training": false,
+  "q1_version": "q1 baseline; q1_v2 candidate only",
+  "word_fields_updated": true,
+  "card_update": "word-interval card substituted; text unchanged"
+}

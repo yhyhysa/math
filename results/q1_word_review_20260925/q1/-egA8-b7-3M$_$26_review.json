@@ -1,0 +1,47 @@
+{
+  "sample_id": "-egA8-b7-3M$_$26",
+  "selection": "word_interval",
+  "estimated_times": true,
+  "word_frame_mapping": [
+    {
+      "word_index": 1,
+      "word": "We're",
+      "start_s": 0.5218,
+      "end_s": 0.7024,
+      "sampled_frame_index": 6,
+      "sampled_face_valid": true,
+      "actual_frame_s": 0.6,
+      "frame_inside_word": true
+    },
+    {
+      "word_index": 6,
+      "word": "time",
+      "start_s": 1.7461,
+      "end_s": 2.007,
+      "sampled_frame_index": 19,
+      "sampled_face_valid": true,
+      "actual_frame_s": 1.9,
+      "frame_inside_word": true
+    },
+    {
+      "word_index": 10,
+      "word": "to",
+      "start_s": 3.3918,
+      "end_s": 3.4721,
+      "sampled_frame_index": 34,
+      "sampled_face_valid": true,
+      "actual_frame_s": 3.4,
+      "frame_inside_word": true
+    },
+    {
+      "word_index": 15,
+      "word": "videos.",
+      "start_s": 4.7365,
+      "end_s": 5.2181,
+      "sampled_frame_index": 50,
+      "sampled_face_valid": true,
+      "actual_frame_s": 5.0,
+      "frame_inside_word": true
+    }
+  ]
+}

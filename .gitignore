@@ -26,6 +26,9 @@
 /results/q3_c_uni_final_*/人工审查_本机路径备份.html
 /results/q2_posthoc_emoe_test_*/
 /src/q2_posthoc_test_eval.py
+/results/card_backup_*/
+/results/paper_*/*预览_*.png
+/results/paper_*/page_*.png
 *.log
 
 # Python and editor artifacts.
