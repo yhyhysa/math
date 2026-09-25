@@ -1,0 +1,24 @@
+{
+  "status": "COMPLETE",
+  "model": "C_uni three-seed ensemble; no new training",
+  "valid_n": 728,
+  "valid_metrics": {
+    "accuracy": 0.6373626373626373,
+    "macro_f1": 0.6172616123051075,
+    "f1_0": 0.6651270207852193,
+    "f1_1": 0.4782608695652174,
+    "f1_2": 0.7083969465648855,
+    "mae": 0.5984250903129578,
+    "pearson": 0.6469080620844373,
+    "sign_conflict": 0.020604395604395604
+  },
+  "word_review_n": 123,
+  "word_review_initial_n": 128,
+  "word_review_excluded_short_text": 5,
+  "word_review_sampling": "fixed seed 20260925; initially 43 negative, 42 neutral, 43 positive by true valid label; clips without two word windows excluded",
+  "top_word_recode_drop_mean": 0.1431646045388245,
+  "random_word_recode_drop_mean": 0.05184055937499535,
+  "top_beats_random_fraction": 0.7317073170731707,
+  "top_positive_drop_fraction": 0.8943089430894309,
+  "interpretation_limit": "Feature-level window ranking and original-word BERT re-encoding are different interventions. This validates model sensitivity, not human-ground-truth evidence localization or AV timestamps."
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\checkpoints\\q2_c_aug_1layer_concat_eff_tonight_uni_20260924_seed_20260923\\best.pt",
+    "sha256": "e7ce24f25d825ba3499ddbd9081f01e088eccee0c4cde2b8bf40812f2bb2dc1e"
+  },
+  {
+    "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\checkpoints\\q2_c_aug_1layer_concat_eff_tonight_uni_20260924_seed_20260924\\best.pt",
+    "sha256": "ab62160d93dc31aa5bb8d828a145edd59a7fe55c9c2f6b7ccdb9891851784a9d"
+  },
+  {
+    "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\checkpoints\\q2_c_aug_1layer_concat_eff_tonight_uni_20260924_seed_20260925\\best.pt",
+    "sha256": "6fe3175003556c376298c3293ba1fa9e5c784ee5d1a8730d794472d1d5bfe5b8"
+  },
+  {
+    "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\models\\bert-base-uncased\\86b5e0934494bd15c9632b12f734a8a67f723594\\model.safetensors",
+    "sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3"
+  },
+  {
+    "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\models\\wav2vec2-base-960h\\model.safetensors",
+    "sha256": "8aa76ab2243c81747a1f832954586bc566090c83a0ac167df6f31f0fa917d74a"
+  },
+  {
+    "path": "D:\\第二十三届中国研究生数学建模竞赛 - 中文题目\\中文题目\\E题\\工程\\data\\raw\\extracted\\E题数据\\附件2-数据集特征文件\\aligned_50.pkl",
+    "sha256": "66e867aa74bc70a844e806e5571e371c9abb4a35f9e2887ce9b4d97ff2cb8fcd"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE_AWAITING_HUMAN_REVIEW",
+  "samples": 20,
+  "model": "q2_c_aug_1layer_concat_eff_tonight_uni_20260924",
+  "seeds": [
+    20260923,
+    20260924,
+    20260925
+  ],
+  "training_performed": false,
+  "attachment4_labels_used": false,
+  "mean_reference": "A2 train content-token text mean; zero after Q2 train normalization for audio and vision; original availability retained",
+  "missing_reference": "modality availability set false; sensitivity analysis only",
+  "reference_sensitive_main_count": 3,
+  "vision_empty_clips": [
+    "13"
+  ],
+  "ctc_unresolved_words": 14,
+  "mapping_limit": "A4 does not include official audio/video feature row timestamps. CTC seconds are reconstructed from original media; AV row-to-second links require human review.",
+  "accuracy_available": false
+}

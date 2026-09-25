@@ -19,6 +19,13 @@
 /results/q1_import_error.txt
 /results/q1_v2/q1_review_figures/
 /results/q1_v2_face_contact_sheets/
+/results/*smoke*/
+/results/q3_full_*/
+/results/q3_c_uni_full_*/
+/results/q3_c_uni_validation_full_*/
+/results/q3_c_uni_final_*/人工审查_本机路径备份.html
+/results/q2_posthoc_emoe_test_*/
+/src/q2_posthoc_test_eval.py
 *.log
 
 # Python and editor artifacts.

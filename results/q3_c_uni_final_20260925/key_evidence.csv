@@ -1,0 +1,76 @@
+﻿sample_id,modality,rank,fixed_class,text_span,char_start,char_end,token_start,token_end_exclusive,start_s,end_s,frame_pts_s,frame_file,feature_class_drop,feature_strength_change,original_text_recode_class_drop,mapping_status,human_review
+01,text,1,neutral,wear components when,16,36,3,6,1.2208,2.1014,,,0.05036383867263794,-0.12907159328460693,0.015498340129852295,ctc_reconstructed,pending
+01,text,2,neutral,belt is essential,58,75,9,12,3.0421,4.2629,,,0.03330928087234497,-0.021914631128311157,0.018585503101348877,ctc_reconstructed,pending
+01,audio,1,neutral,its mileage requirements,113,137,19,23,7.0448,8.2656,,,0.02976149320602417,-0.03870111703872681,,ctc_reconstructed,pending
+01,audio,2,neutral,essential to ensuring,66,87,11,14,3.7826,5.0234,,,0.01574486494064331,-0.01983986794948578,,ctc_reconstructed,pending
+01,vision,1,neutral,essential to ensuring,66,87,11,14,3.7826,5.0234,4.4,frames/01_vision_1.jpg,0.01749873161315918,-0.014741823077201843,,ctc_reconstructed,pending
+01,vision,2,neutral,Replacing these wear,0,20,1,4,0.5003,1.401,0.9666666666666667,frames/01_vision_2.jpg,0.016575276851654053,-0.022610902786254883,,ctc_reconstructed,pending
+02,text,1,neutral,We want to,0,10,1,4,0.4812,0.782,,,0.034044623374938965,0.05306942015886307,-0.0381646454334259,ctc_reconstructed,pending
+02,text,2,neutral,not by each,44,55,12,15,1.8246,2.2055,,,0.020205199718475342,-0.001116979867219925,0.03143543004989624,ctc_reconstructed,pending
+02,audio,1,neutral,each other’s misery.,51,71,14,20,2.1053,2.767,,,0.03404277563095093,0.060119904577732086,,ctc_reconstructed,pending
+02,audio,2,neutral,by each other’s,16,31,5,10,0.9825,1.4236,,,0.022397220134735107,0.060732804238796234,,ctc_reconstructed,pending
+02,vision,1,neutral,each other’s misery.,51,71,14,20,2.1053,2.767,2.433333333333333,frames/02_vision_1.jpg,0.03353339433670044,-0.10908530652523041,,ctc_reconstructed,pending
+02,vision,2,neutral,other’s happiness -,24,43,7,12,,,,,0.02628609538078308,-0.08708977699279785,,low_confidence_or_unmapped,pending
+03,text,1,negative,who don't take,64,78,17,22,4.1101,4.9922,,,0.12689527869224548,-0.12325794994831085,0.19034701585769653,ctc_reconstructed,pending
+03,text,2,negative,"income into account,",86,106,23,27,5.4935,6.536,,,0.06323283910751343,-0.07299821078777313,0.04080900549888611,ctc_reconstructed,pending
+03,audio,1,negative,"into account, they",93,111,24,28,5.9145,6.9771,,,0.007275223731994629,0.01936250925064087,,ctc_reconstructed,pending
+03,audio,2,negative,into account.,130,143,31,34,8.4808,9.0221,,,0.0014867782592773438,0.005187034606933594,,ctc_reconstructed,pending
+04,text,1,negative,goodbye?] Absolutely not.,82,107,21,27,4.4849,6.2468,,,0.3505900800228119,-0.806623101234436,0.34849676489830017,ctc_reconstructed,pending
+04,text,2,negative,should I kiss,35,48,10,13,2.1824,2.6629,,,0.07354074716567993,-0.2540384829044342,0.11601525545120239,ctc_reconstructed,pending
+04,audio,1,negative,"team exercise, should",20,41,7,11,1.2814,2.3426,,,0.0017426609992980957,0.029624104499816895,,ctc_reconstructed,pending
+05,text,1,positive,my name is,4,14,3,6,1.9646,2.3655,,,0.0303838849067688,0.03809037804603577,-0.027583956718444824,ctc_reconstructed,pending
+05,vision,1,positive,"Hi, my name",0,11,1,5,1.2629,2.2452,1.7666666666666666,frames/05_vision_1.jpg,0.04539519548416138,0.016466528177261353,,ctc_reconstructed,pending
+05,vision,2,positive,"is Chloe, video",12,27,5,9,2.3054,3.5282,2.933333333333333,frames/05_vision_2.jpg,0.042022764682769775,-0.00895586609840393,,ctc_reconstructed,pending
+06,text,1,positive,"dance, see impressive",68,89,18,22,3.2271,4.4098,,,0.04274928569793701,0.05165815353393555,0.035992562770843506,ctc_reconstructed,pending
+06,text,2,positive,you're a fan,3,15,2,7,,,,,0.027100026607513428,0.04197561740875244,0.1302148699760437,low_confidence_or_unmapped,pending
+07,text,1,positive,attendees “enthusiastically discussed,76,113,19,23,5.0013,7.562,,,0.0606265664100647,0.08660882711410522,0.14150786399841309,ctc_reconstructed,pending
+07,text,2,positive,"growing the hobby,",128,146,26,30,8.8223,9.5625,,,0.015129387378692627,0.03403574228286743,0.0807342529296875,ctc_reconstructed,pending
+07,audio,1,positive,discussed the topics,104,124,22,25,7.1019,8.1421,,,0.0032274723052978516,0.0074424147605896,,ctc_reconstructed,pending
+07,vision,1,positive,dealers and philatelic,178,200,37,42,11.7631,12.8234,12.3,frames/07_vision_1.jpg,0.001669764518737793,-0.0013406872749328613,,ctc_reconstructed,pending
+07,vision,2,positive,"partnerships, along with",201,225,42,46,12.9034,14.4438,13.666666666666666,frames/07_vision_2.jpg,0.0004158616065979004,0.0001354217529296875,,ctc_reconstructed,pending
+08,text,1,positive,Universal Design Grand,31,53,8,11,2.0435,3.6863,,,0.06437215209007263,0.1038701981306076,0.12022939324378967,ctc_reconstructed,pending
+08,text,2,positive,That brings us,0,14,1,4,0.6411,1.2021,,,0.05658653378486633,0.0605698823928833,0.06577494740486145,ctc_reconstructed,pending
+09,text,1,negative,(uhh) I did,0,11,1,7,0.4824,1.3265,,,0.06161540746688843,-0.4547847509384155,0.022109031677246094,ctc_reconstructed,pending
+09,text,2,negative,not like this,12,25,7,10,1.3667,1.7486,,,0.03853952884674072,-0.31772541999816895,0.031661033630371094,ctc_reconstructed,pending
+09,audio,1,negative,recommend it,52,64,17,19,3.2157,4.3614,,,0.00039386749267578125,0.03670024871826172,,ctc_reconstructed,pending
+10,text,1,negative,was pretty terrible,110,129,28,31,7.512,9.2147,,,0.14129894971847534,-0.7158759236335754,0.2740165591239929,ctc_reconstructed,pending
+10,text,2,negative,but this one,97,109,25,28,6.7507,7.4318,,,0.04036968946456909,-0.23015689849853516,0.02022397518157959,ctc_reconstructed,pending
+10,audio,1,negative,flicks sometimes so,56,75,15,19,3.9062,5.1282,,,0.0011798739433288574,0.009257316589355469,,ctc_reconstructed,pending
+11,text,1,negative,would be ashamed,2,18,2,5,0.6221,1.3444,,,0.37660813331604004,-1.0490751266479492,0.6371332406997681,ctc_reconstructed,pending
+11,text,2,negative,to have made,19,31,5,8,3.2307,3.6922,,,0.051585853099823,-0.17524713277816772,-0.03135937452316284,ctc_reconstructed,pending
+11,audio,1,negative,I was a,45,52,11,14,4.555,4.7958,,,0.0013227462768554688,0.07238990068435669,,ctc_reconstructed,pending
+12,text,1,negative,is very low.,174,186,39,43,11.6332,12.2739,,,0.05327802896499634,-0.19439697265625,0.00830930471420288,ctc_reconstructed,pending
+12,text,2,negative,"credit sag, and",144,159,32,37,9.4907,10.7522,,,0.041594088077545166,-0.1518111228942871,0.015435755252838135,ctc_reconstructed,pending
+13,text,1,neutral,"For example, I",0,14,1,5,0.0,0.9025,,,0.03732919692993164,-0.06326767057180405,0.058208346366882324,ctc_reconstructed,pending
+13,text,2,neutral,a relationship between,71,93,19,22,,,,,0.024149417877197266,-0.023151054978370667,0.05449944734573364,low_confidence_or_unmapped,pending
+13,audio,1,neutral,"that data, I",49,61,13,17,,,,,0.022810041904449463,-0.024938344955444336,,low_confidence_or_unmapped,pending
+13,audio,2,neutral,factors or more.,115,131,27,31,7.3004,8.6241,,,0.022253811359405518,-0.03212447464466095,,ctc_reconstructed,pending
+14,text,1,neutral,Rossen and Vettese,24,42,8,14,1.581,2.4615,,,0.07320478558540344,-0.09486272186040878,0.09486833214759827,ctc_reconstructed,pending
+14,text,2,neutral,is the co-founder,3,20,2,7,0.6004,1.3208,,,0.04979780316352844,-0.06816404312849045,0.09521439671516418,ctc_reconstructed,pending
+14,audio,1,neutral,(UFE) courses at,114,130,24,30,6.6441,8.3252,,,0.027089446783065796,-0.09566735476255417,,ctc_reconstructed,pending
+14,audio,2,neutral,Toronto's York University.,131,157,30,36,8.3852,9.606,,,0.02194198966026306,-0.05922847241163254,,ctc_reconstructed,pending
+15,text,1,positive,power to transform,93,111,18,21,,,,,0.03582805395126343,0.1369902491569519,0.05350768566131592,low_confidence_or_unmapped,pending
+15,text,2,positive,believed in its,77,92,15,18,4.5689,5.4507,,,0.015375018119812012,0.0666608214378357,0.04755449295043945,ctc_reconstructed,pending
+15,audio,1,positive,"However, despite their",0,22,1,5,0.0802,1.5831,,,0.007659912109375,0.05427795648574829,,ctc_reconstructed,pending
+15,audio,2,positive,power to transform,93,111,18,21,,,,,0.006739258766174316,0.03747701644897461,,low_confidence_or_unmapped,pending
+15,vision,1,positive,lives,112,117,21,22,7.0338,7.2943,7.166666666666667,frames/15_vision_1.jpg,0.0017033815383911133,0.009170293807983398,,ctc_reconstructed,pending
+16,text,1,negative,"It's a terrible,",0,16,1,7,0.4838,1.1893,,,0.05054670572280884,-0.5929032564163208,0.00952768325805664,ctc_reconstructed,pending
+16,text,2,negative,is a terrible,22,35,8,11,1.6126,2.177,,,0.023512601852416992,-0.3387126922607422,0.00984126329421997,ctc_reconstructed,pending
+16,audio,1,negative,a terrible movie,25,41,9,12,1.7335,2.5196,,,0.002213776111602783,0.021079540252685547,,ctc_reconstructed,pending
+17,text,1,positive,easy and will,69,82,12,15,5.6538,6.957,,,0.021304786205291748,0.13235437870025635,0.04365348815917969,ctc_reconstructed,pending
+17,text,2,positive,"presentations is simple,",44,68,8,12,3.1276,5.1125,,,0.013334929943084717,0.09247338771820068,0.024262189865112305,ctc_reconstructed,pending
+17,vision,1,positive,concepts to your,27,43,5,8,2.2254,3.0875,2.6666666666666665,frames/17_vision_1.jpg,0.0005646944046020508,-0.023137450218200684,,ctc_reconstructed,pending
+18,text,1,negative,has been denied,114,129,27,30,8.6877,9.4284,,,0.1127614974975586,-0.15210828185081482,0.09769263863563538,ctc_reconstructed,pending
+18,text,2,negative,has failed to,183,196,39,42,12.5912,13.1917,,,0.055503904819488525,-0.07580849528312683,0.07781422138214111,ctc_reconstructed,pending
+18,audio,1,negative,Mackerel Fishery has,97,117,23,28,7.827,8.7678,,,0.011277228593826294,-0.000986546277999878,,ctc_reconstructed,pending
+18,audio,2,negative,on mackerel,216,227,45,49,14.6931,15.2135,,,0.00585174560546875,-0.02105259895324707,,ctc_reconstructed,pending
+19,text,1,negative,"all over imperfections,",142,165,27,32,9.5276,10.7085,,,0.10491332411766052,-0.2685352563858032,-0.11363816261291504,ctc_reconstructed,pending
+19,text,2,negative,"up to mistakes,",55,70,10,14,3.6029,4.4035,,,0.10410323739051819,-0.26351070404052734,-0.04645508527755737,ctc_reconstructed,pending
+19,audio,1,negative,"the most part,",174,188,34,38,11.4891,12.0095,,,0.013028621673583984,-0.045883893966674805,,ctc_reconstructed,pending
+19,audio,2,negative,some haters out,89,104,16,20,6.1449,6.9255,,,0.010812431573867798,0.004836410284042358,,ctc_reconstructed,pending
+20,text,1,positive,"more, and we'll",70,85,16,22,3.5432,4.8845,,,0.022850334644317627,0.05300265550613403,0.05406314134597778,ctc_reconstructed,pending
+20,text,2,positive,"of course, click",4,20,2,6,0.7006,1.3813,,,0.014727473258972168,0.03686469793319702,0.03438478708267212,ctc_reconstructed,pending
+20,audio,1,positive,end of the,151,161,38,41,9.0483,9.2885,,,0.0023407936096191406,0.014169514179229736,,ctc_reconstructed,pending
+20,audio,2,positive,day today.,162,172,41,44,9.3285,9.6889,,,0.0008169412612915039,0.009753406047821045,,ctc_reconstructed,pending
+20,vision,1,positive,"more, and we'll",70,85,16,22,3.5432,4.8845,4.2,frames/20_vision_1.jpg,0.010411739349365234,0.024685561656951904,,ctc_reconstructed,pending
+20,vision,2,positive,of this video,52,65,12,15,2.6624,3.2229,2.933333333333333,frames/20_vision_2.jpg,0.004784822463989258,0.011195719242095947,,ctc_reconstructed,pending

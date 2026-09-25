@@ -1,0 +1,21 @@
+﻿sample_id,word_count,unresolved_words,mean_word_score,error,method,av_feature_time_status
+01,21,0,0.9288,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+02,14,1,0.987,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+03,25,0,0.9404,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+04,20,0,0.9452,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+05,11,0,0.8614,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+06,31,3,0.7457,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+07,51,1,0.9059,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+08,10,0,0.9665,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+09,14,0,0.857,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+10,25,2,0.8439,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+11,14,0,0.756,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+12,35,0,0.9447,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+13,27,2,0.721,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+14,24,0,0.8398,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+15,17,2,0.3794,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+16,8,0,0.7624,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+17,22,0,0.9487,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+18,46,2,0.8877,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+19,33,0,0.9646,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
+20,34,1,0.8835,,forced CTC alignment of supplied transcript to original video audio,estimated from aligned token position; official AV row timestamps unavailable
